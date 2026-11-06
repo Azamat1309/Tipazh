@@ -129,6 +129,10 @@ ul.dont li:before{content:'✕';position:absolute;left:2px;color:#b04a3a;font-we
 .seg{display:flex;background:#e9e2d8;border-radius:999px;padding:3px;margin-top:12px}.seg button{flex:1;border:0;background:none;border-radius:999px;padding:8px;font-size:12.5px;font-weight:700}.seg button.on{background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .src{font-size:12.5px;color:var(--mute);margin:6px 0 0;padding-left:18px}.src li{margin:4px 0}
 .alt{font-size:12.5px;color:var(--mute);margin-top:6px}
+.item .ic{flex:0 0 74px!important;height:86px!important;background:#f1ebe2!important}.item .ic svg{width:66px!important;height:78px!important}
+.look .board{display:block!important;padding:0!important;aspect-ratio:auto!important}
+.look .board>div{display:none}
+.pbtns label svg{width:26px;height:26px}
 
 button,a{touch-action:manipulation}
 html{-webkit-text-size-adjust:100%}
@@ -418,6 +422,81 @@ function fig(sh,sex){const W={m:{trap:[30,20,22],inv:[36,18,18],rect:[26,25,26],
  return `<svg viewBox="0 0 64 100"><circle cx="32" cy="10" r="7" fill="#1c1a18"/><path d="M${32-s} 22 Q32 18 ${32+s} 22 L${32+w} 50 L${32+h} 66 L${32+h*.6} 98 L36 98 L32 70 L28 98 L${32-h*.6} 98 L${32-h} 66 L${32-w} 50Z" fill="#1c1a18"/></svg>`}
 
 
+/* ===== Эскизы вещей (fashion flats) ===== */
+const VB={oxford:'0 0 200 110',loafer:'0 0 200 110',pump:'0 0 200 110',sneaker:'0 0 200 110',boot:'0 0 200 110',belt:'0 0 200 110',bag:'0 0 200 180',cap:'0 0 200 140'};
+function ill(t,c){const dk=shade(c,.62),lt=light(c);const ol=lt?'#b9b0a4':shade(c,.55);
+ const S=`stroke="${ol}" stroke-width="1.3" stroke-linejoin="round"`;const D=`fill="none" stroke="${dk}" stroke-opacity="${lt?.45:.7}" stroke-width="1.2"`;
+ const st=`fill="none" stroke="${lt?'#a89e90':shade(c,1.6)}" stroke-opacity=".7" stroke-width=".9" stroke-dasharray="2.5 2"`;
+ const P=d=>`<path d="${d}" fill="${c}" ${S}/><path d="${d}" fill="url(#tpg)"/>`;
+ const Pd=d=>`<path d="${d}" fill="${dk}" fill-opacity=".35" ${S}/>`;
+ const btn=(x,y,r=2.6)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${lt?'#d8d0c4':shade(c,.45)}" stroke="${lt?'#a89e90':shade(c,1.4)}" stroke-width=".6"/>`;
+ const F={
+ shirt:()=>P('M62 40 L84 30 L100 44 L116 30 L138 40 L160 52 L178 150 L180 196 L162 199 L156 112 L150 118 L150 224 Q100 232 50 224 L50 118 L44 112 L38 199 L20 196 L22 150 L40 52Z')
+  +P('M84 30 L100 44 L116 30 L116 22 Q100 16 84 22Z')+P('M84 30 L90 54 L100 44Z')+P('M116 30 L110 54 L100 44Z')
+  +`<path d="M100 44 L100 226" ${D}/><path d="M96 46 L96 226" ${st}/>`+[64,88,112,136,160,184,208].map(y=>btn(100,y,2.2)).join('')
+  +`<path d="M114 72 h22 v24 l-11 4 l-11 -4z" ${D}/><path d="M22 184 L39 187 M161 187 L178 184" ${D}/><path d="M62 40 Q100 56 138 40" ${st}/><path d="M68 120 Q72 170 66 210 M132 120 Q128 170 134 210" ${D} stroke-opacity=".2"/>`,
+ blouse:()=>P('M66 40 Q100 56 134 40 L156 48 Q178 80 184 132 L164 138 Q156 106 148 94 Q153 160 158 216 Q100 228 42 216 Q47 160 52 94 Q44 106 36 138 L16 132 Q22 80 44 48Z')
+  +`<path d="M80 44 Q100 92 120 44" ${D}/><path d="M80 44 Q100 88 120 44" fill="${dk}" fill-opacity=".15"/><path d="M84 110 Q90 160 80 212 M116 110 Q110 160 120 212 M100 96 Q102 150 100 220" ${D} stroke-opacity=".22"/><path d="M164 138 Q172 136 184 132 M16 132 Q28 136 36 138" ${st}/>`,
+ tee:()=>P('M64 40 Q100 56 136 40 L176 62 L162 98 L146 90 L148 216 Q100 224 52 216 L54 90 L38 98 L24 62Z')
+  +`<path d="M76 42 Q100 64 124 42" fill="none" stroke="${dk}" stroke-opacity=".5" stroke-width="5"/><path d="M162 98 L146 90 M38 98 L54 90" ${st}/><path d="M52 208 Q100 216 148 208" ${st}/><path d="M74 120 Q78 170 72 208 M126 120 Q122 170 128 208" ${D} stroke-opacity=".18"/>`,
+ polo:()=>P('M64 40 Q100 56 136 40 L176 62 L162 98 L146 90 L148 216 Q100 224 52 216 L54 90 L38 98 L24 62Z')
+  +P('M78 38 L100 52 L92 68 L68 50Z')+P('M122 38 L100 52 L108 68 L132 50Z')+`<rect x="94" y="52" width="12" height="46" fill="none" ${D.replace('fill="none" ','')}/>`+btn(100,64,2)+btn(100,84,2)+`<path d="M162 98 L146 90 M38 98 L54 90" ${st}/><path d="M52 208 Q100 216 148 208" ${st}/>`,
+ knit:()=>P('M62 44 Q100 58 138 44 L164 58 Q178 100 184 186 L166 192 L156 120 L152 202 L48 202 L44 120 L34 192 L16 186 Q22 100 36 58Z')
+  +P('M48 200 L152 200 L152 220 L48 220Z')+P('M16 186 L34 192 L32 208 L14 202Z')+P('M184 186 L166 192 L168 208 L186 202Z')
+  +`<path d="M74 46 Q100 66 126 46" fill="none" stroke="${dk}" stroke-opacity=".55" stroke-width="7"/>`
+  +Array.from({length:21},(_,i)=>`<path d="M${50+i*5} 202 L${50+i*5} 219" ${D} stroke-opacity=".35"/>`).join('')
+  +[78,100,122].map(x=>`<path d="M${x} 66 Q${x+5} 80 ${x} 94 Q${x-5} 108 ${x} 122 Q${x+5} 136 ${x} 150 Q${x-5} 164 ${x} 178 Q${x+5} 190 ${x} 198" ${D} stroke-opacity=".3"/>`).join(''),
+ blazer:()=>P('M58 36 L84 28 L100 120 L116 28 L142 36 L166 52 Q178 120 182 200 L163 204 L156 116 L154 228 Q100 234 46 228 L44 116 L37 204 L18 200 Q22 120 34 52Z')
+  +`<path d="M84 28 L100 120 L116 28 Q100 38 84 28Z" fill="#f4f1ea" ${S}/>`+Pd('M84 28 L70 62 L80 66 L74 76 L100 120 Z')+Pd('M116 28 L130 62 L120 66 L126 76 L100 120 Z')
+  +`<path d="M100 120 L100 214 Q100 226 112 228" ${D}/>`+btn(104,150,3)+btn(104,180,3)+`<path d="M54 172 h30 M116 172 h30 M120 96 h20" ${D}/><path d="M46 170 Q60 168 60 228" ${D} stroke-opacity=".2"/><path d="M163 194 L181 190 M19 190 L37 194" ${st}/>`,
+ overshirt:()=>P('M58 34 L84 28 L100 40 L116 28 L142 34 L168 50 Q180 120 182 196 L164 200 L156 116 L154 222 L46 222 L44 116 L36 200 L18 196 Q20 120 32 50Z')
+  +P('M84 28 L100 40 L116 28 L114 20 Q100 14 86 20Z')+`<path d="M100 40 L100 222" ${D}/>`+[60,92,124,156,188].map(y=>btn(100,y,2.8)).join('')
+  +P('M60 64 h28 v34 h-28z')+P('M112 64 h28 v34 h-28z')+Pd('M60 64 h28 v12 h-28z')+Pd('M112 64 h28 v12 h-28z')+`<path d="M46 214 L154 214" ${st}/>`,
+ coat:()=>P('M56 30 L82 22 L100 96 L118 22 L144 30 L170 48 Q182 140 186 230 L167 234 L158 120 L160 236 Q100 242 40 236 L42 120 L33 234 L14 230 Q18 140 30 48Z')
+  +`<path d="M82 22 L100 96 L118 22 Q100 32 82 22Z" fill="${dk}" fill-opacity=".55"/>`+Pd('M82 22 L64 60 L76 66 L68 80 L100 112 L100 96Z')+Pd('M118 22 L136 60 L124 66 L132 80 L100 112 L100 96Z')
+  +[118,146,174].map(y=>btn(86,y,3.4)+btn(114,y,3.4)).join('')+`<path d="M100 112 L100 236" ${D}/><path d="M50 166 l26 -4 M124 162 l26 4" ${D}/><path d="M60 130 Q68 190 58 234 M140 130 Q132 190 142 234" ${D} stroke-opacity=".2"/>`,
+ jacket:()=>P('M58 40 Q100 30 142 40 L168 56 Q180 110 182 176 L164 182 L156 112 L154 192 L46 192 L44 112 L36 182 L18 176 Q20 110 32 56Z')
+  +P('M76 38 Q100 50 124 38 L124 30 Q100 42 76 30Z')+P('M44 186 L156 186 L156 206 L44 206Z')+P('M18 172 L36 178 L34 196 L16 190Z')+P('M182 172 L164 178 L166 196 L184 190Z')
+  +Array.from({length:23},(_,i)=>`<path d="M${46+i*5} 188 L${46+i*5} 205" ${D} stroke-opacity=".3"/>`).join('')
+  +`<path d="M100 40 L100 206" stroke="${lt?'#9a9084':'#c9b48a'}" stroke-width="2.4"/><rect x="97" y="58" width="6" height="12" rx="2" fill="#c9b48a"/><path d="M58 130 l14 30 M142 130 l-14 30" ${D} stroke-width="2.2"/>`,
+ leather:()=>P('M58 36 L84 28 L104 46 L116 28 L142 36 L166 52 Q178 112 182 190 L164 194 L156 114 L154 206 L46 206 L44 114 L36 194 L18 190 Q22 112 34 52Z')
+  +Pd('M84 28 L66 70 L82 80 L98 64 Z')+Pd('M116 28 L136 58 L120 76 L104 46Z')+`<path d="M126 40 L96 206" stroke="#c8c8c8" stroke-width="2.2"/><path d="M46 188 L154 188 M46 196 L154 196" ${D}/><rect x="60" y="186" width="12" height="12" fill="none" stroke="#c8c8c8" stroke-width="1.6"/>`
+  +`<path d="M60 120 l20 -6 M120 140 l22 -6" stroke="#c8c8c8" stroke-width="1.6"/><path d="M50 70 Q60 120 52 180 M150 70 Q142 120 150 180" stroke="#fff" stroke-opacity=".18" stroke-width="5" fill="none"/>`,
+ trousers:()=>P('M54 30 L146 30 L157 232 L110 232 L100 90 L90 232 L43 232Z')+P('M55 14 L145 14 L146 30 L54 30Z')
+  +`<path d="M78 34 L68 230 M122 34 L132 230" stroke="${lt?'#fff':shade(c,1.35)}" stroke-opacity=".55" stroke-width="1.1"/><path d="M100 30 L100 78 Q100 86 94 88" ${D}/><path d="M60 32 Q72 46 74 58 M140 32 Q128 46 126 58" ${D}/>`
+  +[66,90,110,134].map(x=>`<rect x="${x}" y="12" width="4" height="20" fill="${dk}" fill-opacity=".4"/>`).join('')+btn(100,22,2.4),
+ jeans:()=>P('M56 30 L144 30 L153 232 L110 232 L100 90 L90 232 L47 232Z')+P('M57 14 L143 14 L144 30 L56 30Z')
+  +`<path d="M56 30 L144 30 L153 232 L110 232 L100 90 L90 232 L47 232Z" fill="url(#tpTw)" opacity=".5"/>`
+  +`<path d="M100 30 L100 76 Q100 86 92 90 M60 32 Q74 48 88 44 M140 32 Q126 48 112 44 M57 26 L143 26" fill="none" stroke="#d6a24a" stroke-width="1.1" stroke-dasharray="3 2"/><path d="M118 36 h14 v12 h-14" fill="none" stroke="#d6a24a" stroke-width="1" stroke-dasharray="2 2"/>`
+  +btn(100,22,2.6)+`<circle cx="88" cy="44" r="1.6" fill="#c9a050"/><circle cx="112" cy="44" r="1.6" fill="#c9a050"/><path d="M50 220 L88 220 M112 220 L151 220" fill="none" stroke="#d6a24a" stroke-width="1" stroke-dasharray="3 2"/>`,
+ skirt:()=>P('M62 30 L138 30 L152 222 Q100 230 48 222Z')+P('M62 16 L138 16 L138 30 L62 30Z')
+  +`<path d="M84 34 L78 220 M116 34 L122 220" ${D} stroke-opacity=".22"/><path d="M110 222 L112 186" ${D}/><path d="M48 214 Q100 222 152 214" ${st}/>`,
+ dress:()=>P('M76 22 L88 14 Q100 34 112 14 L124 22 L132 44 L128 96 L124 102 Q150 170 164 232 Q100 240 36 232 Q50 170 76 102 L72 96 L68 44Z')
+  +`<path d="M72 98 Q100 104 128 98" ${D}/><path d="M88 14 Q100 40 112 14" ${D}/><path d="M86 106 Q80 170 66 230 M100 104 L100 236 M114 106 Q120 170 134 230" ${D} stroke-opacity=".25"/><path d="M38 226 Q100 236 162 226" ${st}/>`,
+ oxford:()=>`<path d="M12 84 L188 84 L188 96 Q100 100 12 96Z" fill="#2a2420"/>`+P('M12 84 Q12 56 40 52 L92 50 Q118 32 150 38 Q188 46 188 84Z')+`<path d="M150 38 Q170 50 174 84" ${D}/><path d="M96 52 L136 42 M100 58 L138 48 M104 64 L140 54" ${D}/><path d="M40 52 Q34 66 36 84" ${D}/><path d="M14 80 L186 80" ${st}/>`,
+ loafer:()=>`<path d="M12 84 L188 84 L188 96 Q100 100 12 96Z" fill="#2a2420"/>`+P('M12 84 Q12 60 40 56 Q70 48 100 48 Q150 42 176 56 Q190 66 188 84Z')+Pd('M94 50 Q126 40 160 50 L156 62 Q126 54 98 62Z')+`<path d="M118 56 h16" stroke="${dk}" stroke-width="3"/><path d="M14 80 L186 80" ${st}/>`,
+ pump:()=>`<path d="M162 60 L170 60 L160 102 L154 102Z" fill="#2a2420"/>`+P('M10 94 Q10 80 28 76 L64 70 Q84 72 104 66 Q126 58 142 46 Q160 38 176 46 Q182 52 176 60 L150 64 Q118 70 96 84 Q62 98 18 98Z')+`<path d="M64 70 Q90 64 110 54 Q128 46 142 46" fill="none" stroke="${dk}" stroke-width="2" stroke-opacity=".6"/><path d="M18 97 Q60 95 96 84 Q120 70 150 64" fill="none" stroke="#2a2420" stroke-width="2"/>`,
+ sneaker:()=>`<path d="M10 78 L190 78 L190 96 Q100 102 10 96Z" fill="#f2efe8" stroke="#c9c1b6"/><path d="M10 90 L190 90" stroke="#d9d2c6"/>`+P('M10 80 Q12 52 36 50 Q58 48 76 40 L100 34 Q120 30 140 38 Q182 52 190 80Z')+`<path d="M80 44 L120 36 M84 52 L124 44 M88 60 L128 52" stroke="#f2efe8" stroke-width="2"/><path d="M40 68 Q90 56 150 64" ${D} stroke-width="3" stroke-opacity=".4"/><path d="M150 40 Q158 30 170 34" ${D}/>`,
+ boot:()=>`<path d="M30 92 L188 92 L188 102 Q100 106 30 102Z" fill="#2a2420"/>`+P('M38 6 L102 6 L106 58 Q150 60 176 72 Q190 80 188 92 L30 92 L34 48Z')+Pd('M44 10 L64 10 L68 56 L46 56Z')+`<path d="M60 4 Q66 -2 72 4 L72 12 L60 12Z" fill="${dk}"/><path d="M36 86 L186 86" ${st}/>`,
+ belt:()=>`<path d="M6 46 L194 46 L194 66 L6 66Z" fill="${c}" ${S}/><path d="M6 46 L194 46 L194 66 L6 66Z" fill="url(#tpg)"/><path d="M8 50 L192 50 M8 62 L192 62" ${st}/><rect x="48" y="36" width="28" height="40" rx="4" fill="none" stroke="#b9975a" stroke-width="4"/><path d="M62 40 L62 72" stroke="#b9975a" stroke-width="3"/>${[110,124,138].map(x=>`<circle cx="${x}" cy="56" r="2.2" fill="${dk}"/>`).join('')}`,
+ bag:()=>`<path d="M62 64 Q62 14 100 14 Q138 14 138 64" fill="none" stroke="${dk}" stroke-width="7"/>`+P('M26 62 L174 62 L184 170 L16 170Z')+Pd('M26 62 L174 62 L166 104 L34 104Z')+`<rect x="92" y="96" width="16" height="16" rx="3" fill="#c9b48a" stroke="#9a8460"/><path d="M20 160 L180 160" ${st}/><path d="M30 66 L170 66" ${st}/>`,
+ cap:()=>P('M30 104 Q30 44 100 40 Q170 44 170 104Z')+P('M14 104 L186 104 Q186 118 100 120 Q14 118 14 104Z')+`<path d="M34 92 Q100 82 166 92" stroke="${dk}" stroke-width="7" fill="none" stroke-opacity=".6"/>`
+ };return {vb:VB[t]||'0 0 200 240',b:(F[t]||F.tee)()}}
+function ic(t,c){const r=ill(t,c);return `<svg viewBox="${r.vb}" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 2px 3px rgba(40,30,20,.18))">${r.b}</svg>`}
+/* общие defs: объём ткани и фактура денима */
+document.body.insertAdjacentHTML('afterbegin',`<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="tpg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".24"/></linearGradient><pattern id="tpTw" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0 L0 4" stroke="#000" stroke-opacity=".18" stroke-width="1.2"/></pattern><filter id="tpsh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#3a2a1a" flood-opacity=".22"/></filter></defs></svg>`);
+/* доска образа: раскладка как у стилиста */
+function board(items){const has=s=>items.find(x=>x.slot===s);const out=[];const L=(x,y,w,r)=>({x,y,w,r:r||0});const pos={};
+ const dress=has('dress'),lay=has('layer'),outr=has('outer');
+ if(dress)pos.dress=L(92,14,176);else{pos.bottom=L(118,176,128);pos.top=L(102,14,160)}
+ if(lay&&outr){pos.layer=L(6,40,118,-6);pos.outer=L(238,30,118,5)}else if(lay)pos.layer=L(6,40,128,-5);else if(outr)pos.outer=L(6,30,128,-5);
+ const z=['outer','layer','bottom','dress','top'];
+ z.forEach(s=>{const it=has(s);const p=pos[s];if(!it||!p)return;const vb=(VB[it.icon]||'0 0 200 240').split(' ').map(Number);const h=p.w*vb[3]/vb[2];
+  out.push(`<g transform="rotate(${p.r} ${p.x+p.w/2} ${p.y+h/2})" filter="url(#tpsh)"><svg x="${p.x}" y="${p.y}" width="${p.w}" height="${h}" viewBox="${vb.join(' ')}">${ill(it.icon,it.col[0]).b}</svg></g>`)});
+ const sh=has('shoes');if(sh){out.push(`<g filter="url(#tpsh)"><svg x="120" y="356" width="126" height="69" viewBox="${VB[sh.icon]||'0 0 200 110'}">${ill(sh.icon,sh.col[0]).b}</svg><svg x="150" y="382" width="126" height="69" viewBox="${VB[sh.icon]||'0 0 200 110'}">${ill(sh.icon,sh.col[0]).b}</svg></g>`)}
+ items.filter(x=>x.slot==='acc').forEach((a,i)=>{const vb=VB[a.icon]||'0 0 200 180';const isB=a.icon==='bag';out.push(`<g filter="url(#tpsh)" transform="rotate(${isB?4:-8} 300 330)"><svg x="${isB?262:14}" y="${isB?290:300}" width="${isB?96:110}" height="${isB?86:60}" viewBox="${vb}">${ill(a.icon,a.col[0]).b}</svg></g>`)});
+ return `<svg viewBox="0 0 360 460" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto"><rect width="360" height="460" fill="#efe8de"/><path d="M0 452 L360 452" stroke="#e2d9cc"/>${out.join('')}</svg>`}
+
 
 /* ===== Цвет: sRGB → Lab ===== */
 const lin=c=>{c/=255;return c<=.04045?c/12.92:Math.pow((c+.055)/1.055,2.4)};
@@ -478,13 +557,13 @@ function next(){if(STEP<Q.length-1){STEP++;rStep();window.scrollTo(0,0)}else{com
 /* ===== Фото: камера / галерея, замер цвета по точкам ===== */
 const PH={img:null,oc:null,z:1,pts:{}};
 const TG=[['white','Белок глаза или белая бумага у лица','для баланса белого — убирает влияние освещения'],['skin','Щека','ровный участок без румянца и теней'],['hair','Волосы у корней','натуральный цвет, не блик'],['eye','Радужка глаза','цветная часть рядом со зрачком — увеличьте ×3']];
-function upBtns(t){return `<div class="pbtns"><label><span>📷</span>${t?'Новое фото':'Камера'}<input type="file" accept="image/*" capture="user" style="display:none" onchange="onPhoto(this)"></label><label><span>🖼</span>${t?'Другое из галереи':'Из галереи'}<input type="file" accept="image/*" style="display:none" onchange="onPhoto(this)"></label></div>`}
+function upBtns(t){return `<div class="pbtns"><label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>${t?'Новое фото':'Камера'}<input type="file" accept="image/*" capture="user" style="display:none" onchange="onPhoto(this)"></label><label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M3 18l6-5 4 3 3-2 5 4"/></svg>${t?'Другое из галереи':'Из галереи'}<input type="file" accept="image/*" style="display:none" onchange="onPhoto(this)"></label></div>`}
 function onPhoto(inp){const f=inp.files&&inp.files[0];if(!f)return;if(PHOTO)URL.revokeObjectURL(PHOTO);PHOTO=URL.createObjectURL(f);const im=new Image();im.onload=()=>{const k=Math.min(1,1200/Math.max(im.width,im.height));const oc=document.createElement('canvas');oc.width=Math.round(im.width*k);oc.height=Math.round(im.height*k);oc.getContext('2d').drawImage(im,0,0,oc.width,oc.height);PH.img=im;PH.oc=oc;PH.pts={};PH.z=1;rStep()};im.src=PHOTO}
 function curT(){return TG.find(t=>!PH.pts[t[0]])}
 function rPhoto(){if(!PH.img)return `${upBtns()}<div class="hint" style="margin-top:14px">Фото уточняет цветотип: вы отметите 4 точки — белок глаза, щеку, волосы и радужку, а приложение замерит их цвет. Можно пропустить и выбрать цвета вручную.</div><button class="skip" onclick="next()">Пропустить</button>`;
  const t=curT();const done=TG.filter(x=>PH.pts[x[0]]);
  return `<div class="pcwrap" id="pcw"><canvas id="pc"></canvas></div><div class="zoom">${[1,2,3].map(z=>`<button class="${PH.z===z?'on':''}" onclick="PH.z=${z};rStep()">×${z}</button>`).join('')}</div>
- ${t?`<div class="ptgt"><span style="font-size:20px">👆</span><div><b>Коснитесь: ${t[1]}</b><small>${t[2]}</small></div></div>${t[0]==='white'?`<button class="skip" style="margin-top:0" onclick="PH.pts.white='skip';rStep()">Нет белого — пропустить баланс</button>`:''}`:`<div class="ptgt" style="background:#3e7a4e"><span style="font-size:20px">✓</span><div><b>Замеры готовы</b><small>${phSummary()}</small></div></div>`}
+ ${t?`<div class="ptgt"><div><b>Коснитесь: ${t[1]}</b><small>${t[2]}</small></div></div>${t[0]==='white'?`<button class="skip" style="margin-top:0" onclick="PH.pts.white='skip';rStep()">Нет белого — пропустить баланс</button>`:''}`:`<div class="ptgt" style="background:#3e7a4e"><div><b>Замеры готовы</b><small>${phSummary()}</small></div></div>`}
  <div class="pts">${done.map(x=>PH.pts[x[0]]==='skip'?'':`<span><i style="background:rgb(${PH.pts[x[0]].rgb.join(',')})"></i>${x[1].split(' ')[0]}</span>`).join('')}</div>
  ${done.length?`<button class="skip" onclick="PH.pts={};delete A.ph;save();rStep()">Сбросить точки</button>`:''}
  <div style="margin-top:14px">${upBtns(1)}</div>${t?'':`<button class="btn" onclick="next()">Дальше</button>`}`}
@@ -535,7 +614,7 @@ function buildCaps(){const S=SEASONS[R.season];const items=CAPS[R.sex][R.life];c
  R.caps=items.map(it=>{const[slot,icon,name,q,f,role]=it;let col;
   if(role==='n'){col=S.neu[(slot==='outer'||slot==='shoes'||slot==='acc'?[3,2,1,0]:[1,3,0,2])[ni++%4]];if(slot==='outer'||slot==='layer'){let k=0;while((used.includes(col[0])||light(col[0]))&&k<4){col=S.neu[(S.neu.indexOf(col)+1)%4];k++}used.push(col[0])}}
   else if(role==='l'){col=(lights.length?lights:S.col)[li++%(lights.length||S.col.length)]}else{col=(accents.length?accents:S.col)[ai++%(accents.length||S.col.length)]}
-  const cu=cut[icon]||cut[slot]||'';return {slot,icon,name,q,f,col,cut:cu,query:`${q} ${cu} ${col[1]}`.replace(/\s+/g,' ').trim()}});
+  const cu=cut[icon]||cut[slot]||IDK(icon);const mt=(MAT[IDS[R.id].fam]||{})[icon]||'';return {slot,icon,name,q,f,col,cut:[/оксфорд|джинс/.test(q)?'':mt,cu].filter(Boolean).join(', '),query:dq(`${q} ${/оксфорд|джинс/.test(q)?'':mt} ${cu} ${col[1]}`)}});
  R.looks=makeLooks(R.caps,SCEN[R.life],6)}
 function makeLooks(C,names,N){const by=s=>C.filter(x=>x.slot===s);const tops=by('top'),bots=by('bottom'),dres=by('dress'),lay=by('layer'),out=by('outer'),sh=by('shoes'),acc=by('acc');const L=[];
  for(let i=0;i<N;i++){const f=[3,3,2,2,1,1][i%6];const pickF=(arr,k)=>{if(!arr.length)return null;const s=arr.slice().sort((a,b)=>Math.abs((a.f||2)-f)-Math.abs((b.f||2)-f));return s[(k||0)%s.length]};
@@ -557,11 +636,19 @@ function matchCelebs(){const S=SEASONS[R.season],me=IDS[R.id];const lab=(list,k)
 function celItems(c,mine){const S=SEASONS[R.season];const pal=S.col.concat(S.neu);return c.w.map(w=>{let col=[w[4],w[5]];if(mine&&!/деним/.test(w[5])){const l=hex2lab(w[4]);col=pal.slice().sort((a,b)=>dE(hex2lab(a[0]),l)-dE(hex2lab(b[0]),l))[0]}
  return {icon:w[0],slot:w[1],name:w[2],col,f:2,query:`${w[3]} ${col[1]}`}})}
 
+/* ===== Материалы по семье типажа (для точного поиска) ===== */
+const MAT={D:{blazer:'шерстяной',coat:'шерстяное',trousers:'шерстяные',shirt:'хлопковая',blouse:'шелковая',knit:'тонкой вязки',dress:'футляр',skirt:'шерстяная',leather:'кожаная',loafer:'кожаные',oxford:'кожаные',boot:'кожаные',bag:'кожаная'},
+ N:{blazer:'льняной',coat:'шерстяное',trousers:'льняные',shirt:'льняная',blouse:'льняная',knit:'крупной вязки',jacket:'замшевая',overshirt:'вельветовая',dress:'рубашка',skirt:'льняная',leather:'кожаная',boot:'замшевые',bag:'кожаная'},
+ C:{blazer:'шерстяной',coat:'шерстяное',trousers:'шерстяные',shirt:'хлопковая',blouse:'шелковая',knit:'кашемир',dress:'футляр',skirt:'шерстяная',loafer:'кожаные',oxford:'кожаные',bag:'кожаная'},
+ G:{blazer:'укороченный',coat:'укороченное',trousers:'укороченные',shirt:'хлопковая',knit:'в полоску',jacket:'укороченная',dress:'мини',skirt:'мини',loafer:'кожаные'},
+ R:{blazer:'приталенный',coat:'приталенное',blouse:'шелковая',knit:'мягкий',dress:'с запахом',skirt:'миди',pump:'замшевые',bag:'кожаная'}};
+const dq=s=>{const seen=new Set();return s.split(/[\s,]+/).filter(w=>{const k=w.toLowerCase().replace(/ё/g,'е');if(!w||seen.has(k))return false;seen.add(k);return true}).join(' ')};
+const IDK=icon=>['blazer','coat','dress','knit','trousers'].includes(icon)&&R&&R.id?IDS[R.id].kw:'';
 /* ===== Ссылки ===== */
-const SHOP={wb:q=>'https://www.wildberries.ru/catalog/0/search.aspx?search='+encodeURIComponent(q),oz:q=>'https://www.ozon.ru/search/?text='+encodeURIComponent(q),lm:q=>'https://www.lamoda.ru/catalogsearch/result/?q='+encodeURIComponent(q)};
-const shops=q=>`<div class="shops"><a href="${SHOP.wb(q)}" target="_blank" rel="noopener">WB</a><a href="${SHOP.oz(q)}" target="_blank" rel="noopener">OZON</a><a href="${SHOP.lm(q)}" target="_blank" rel="noopener">LAMODA</a></div>`;
+const SHOP={lm:q=>'https://www.lamoda.ru/catalogsearch/result/?q='+encodeURIComponent(q),wb:q=>'https://www.wildberries.ru/catalog/0/search.aspx?search='+encodeURIComponent(q),oz:q=>'https://www.ozon.ru/search/?text='+encodeURIComponent(q),lm:q=>'https://www.lamoda.ru/catalogsearch/result/?q='+encodeURIComponent(q)};
+const shops=q=>`<div class="shops"><a href="${SHOP.lm(q)}" target="_blank" rel="noopener">LAMODA</a><a href="${SHOP.wb(q)}" target="_blank" rel="noopener">WB</a><a href="${SHOP.oz(q)}" target="_blank" rel="noopener">OZON</a></div>`;
 const itemRow=x=>`<div class="item"><div class="ic">${ic(x.icon,x.col[0])}</div><div class="tx"><b>${x.name}</b><span>${x.col[1]}${x.cut?' · '+x.cut:''}</span>${shops(x.query)}</div></div>`;
-const lookCard=(L,i)=>`<div class="look"><div class="board">${L.items.slice(0,6).map(x=>`<div>${ic(x.icon,x.col[0])}</div>`).join('')}</div><div class="lt"><span class="kick">Образ ${i+1}</span><h3>${L.n}</h3><p>${L.items.map(x=>x.col[1]).filter((v,j,a)=>a.indexOf(v)===j).join(' + ')}</p>${L.items.map(x=>`<div class="row"><span>${x.name} · ${x.col[1]}</span><a href="${SHOP.wb(x.query)}" target="_blank" rel="noopener">найти →</a></div>`).join('')}</div></div>`;
+const lookCard=(L,i)=>`<div class="look"><div class="board">${board(L.items)}</div><div class="lt"><span class="kick">Образ ${i+1}</span><h3>${L.n}</h3><p>${L.items.map(x=>x.col[1]).filter((v,j,a)=>a.indexOf(v)===j).join(' + ')}</p>${L.items.map(x=>`<div class="row"><span>${x.name} · ${x.col[1]}</span><a href="${SHOP.lm(x.query)}" target="_blank" rel="noopener">Ламода →</a></div>`).join('')}</div></div>`;
 const mono=c=>{const cs=c.w.slice(0,4).map(w=>w[4]);return `<div class="mono" style="background:conic-gradient(${cs.map((x,i)=>`${x} ${i*25}% ${(i+1)*25}%`).join(',')})">${c.n.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>`};
 
 /* ===== Экраны ===== */
@@ -627,6 +714,7 @@ R=store.get('tp_r2',null);go(R&&R.id?'res':'intro');
 /* ===== PWA ===== */
 if('serviceWorker' in navigator&&/^https?:/.test(location.protocol)){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{})})}
 (function(){try{const ios=/iphone|ipad|ipod/i.test(navigator.userAgent);const sa=window.navigator.standalone||window.matchMedia('(display-mode: standalone)').matches;if(ios&&!sa&&!localStorage.getItem('tp_ihint')){const d=document.createElement('div');d.className='ihint';d.innerHTML='<b>Установите как приложение:</b> «Поделиться» внизу Safari → «На экран „Домой“».<button aria-label="Закрыть">×</button>';d.querySelector('button').onclick=()=>{d.remove();try{localStorage.setItem('tp_ihint','1')}catch(e){}};document.body.appendChild(d)}}catch(e){}})();
+
 
 </script>
 </body>
