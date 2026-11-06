@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#f4f0ea">
+<meta name="theme-color" content="#fafaf8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Типаж">
@@ -13,130 +13,153 @@
 <title>Типаж — личный стилист</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4f0ea;--card:#fffdf9;--ink:#1c1a18;--mute:#86807a;--line:#e3ddd4;--acc:#1c1a18;--gold:#b08a4e}
+:root{--bg:#fafaf8;--card:#fff;--ink:#111;--mute:#6f6f6b;--line:#e4e3df;--soft:#f2f1ee}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 'Manrope',system-ui,sans-serif}
-#app{max-width:520px;margin:0 auto;padding:max(12px,env(safe-area-inset-top)) 18px 60px}
-button{font:inherit;color:inherit;cursor:pointer}
-h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.01em}
-.top{display:flex;justify-content:space-between;align-items:center;padding:4px 0 10px}
-.logo{font:700 22px 'Cormorant Garamond',serif;letter-spacing:.32em}
-.lnk{background:none;border:0;font-size:13px;color:var(--mute);text-decoration:underline;text-underline-offset:3px}
-.kick{font:600 11px 'Manrope',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
-.btn{display:block;width:100%;min-height:54px;margin-top:12px;border:0;border-radius:999px;background:var(--ink);color:#fff;font:600 14px 'Manrope',sans-serif;letter-spacing:.14em;text-transform:uppercase}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-.btn[disabled]{opacity:.3}
-.hero{position:relative;border-radius:22px;overflow:hidden;background:#e9e2d8;margin-top:6px}
-.hero svg{display:block;width:100%;height:auto}
-.prog{height:2px;background:var(--line);margin:4px 0 22px}.prog i{display:block;height:100%;background:var(--ink);transition:width .3s}
-.q h2{font-size:34px;line-height:1.08;margin:6px 0 6px}
-.q p.s{color:var(--mute);margin:0 0 18px}
-.opts{display:grid;gap:10px}
-.opts.g2{grid-template-columns:1fr 1fr}.opts.g3{grid-template-columns:1fr 1fr 1fr}
-.opt{display:flex;align-items:center;gap:12px;min-height:56px;padding:10px 14px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);text-align:left;transition:border-color .2s,transform .15s}
-.opt:active{transform:scale(.98)}
-.opt.on{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink) inset}
-.opt small{display:block;color:var(--mute);font-size:12.5px;line-height:1.35}
-.opt .sw{flex:0 0 30px;height:30px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
-.opt.fig{flex-direction:column;justify-content:flex-start;text-align:center;padding:12px 6px 10px}
-.opt.fig svg{width:64px;height:100px}
-.opt.fig b{font-size:13px;font-weight:600}
-.num{display:flex;gap:10px;align-items:center}
-.num input{flex:1;height:56px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);font:600 22px 'Manrope';padding:0 16px;width:100%}
-.card{background:var(--card);border-radius:20px;padding:18px;margin-top:14px;border:1px solid var(--line)}
-.card h3{margin:0 0 6px;font-size:26px;line-height:1.1}
-.res-top{text-align:center;padding:18px 0 4px}
-.res-top h1{font-size:44px;line-height:1;margin:6px 0}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.chip{padding:6px 12px;border-radius:999px;background:#efe9e1;font-size:12.5px;font-weight:600}
-.pal{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:10px}
-.pal div{aspect-ratio:1;border-radius:10px;position:relative;border:1px solid rgba(0,0,0,.06)}
-.pal.neu{grid-template-columns:repeat(4,1fr)}
-.pal.av div:after{content:'';position:absolute;left:10%;right:10%;top:50%;height:2px;background:#fff;transform:rotate(-35deg);box-shadow:0 0 0 1px rgba(0,0,0,.2)}
-.pname{font-size:12px;color:var(--mute);margin-top:6px}
-.tabs{display:flex;gap:6px;overflow-x:auto;margin:16px -18px 0;padding:0 18px 4px;scrollbar-width:none;position:sticky;top:0;background:var(--bg);z-index:3;padding-top:8px}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 'Inter Tight','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+#app{max-width:560px;margin:0 auto;padding:max(14px,env(safe-area-inset-top)) 20px 64px}
+button{font:inherit;color:inherit;cursor:pointer;border-radius:0}
+h1,h2,h3{font-weight:400;letter-spacing:-.02em;margin:0}
+a{color:inherit}
+.top{display:flex;justify-content:space-between;align-items:center;padding:6px 0 14px;border-bottom:1px solid var(--ink)}
+.logo{font-weight:600;font-size:13px;letter-spacing:.32em}
+.lnk{background:none;border:0;padding:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.kick{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.btn{display:block;width:100%;min-height:54px;margin-top:20px;border:1px solid var(--ink);background:var(--ink);color:#fff;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn[disabled]{opacity:.25}
+/* анкета */
+.sec{display:flex;gap:3px;margin:18px 0 26px}.sec i{flex:1;height:2px;background:var(--line)}.sec i.done{background:#9b9a96}.sec i.on{background:var(--ink)}
+.q h2{font-size:32px;line-height:1.1;font-weight:300;margin:0 0 10px}
+.q p.s{color:var(--mute);margin:0 0 22px;font-size:14.5px}
+.hint{border-left:2px solid var(--ink);padding:2px 0 2px 14px;font-size:13.5px;color:#3d3d3a;margin:-8px 0 22px}
+.opts{display:grid;gap:0;border-top:1px solid var(--line);counter-reset:o}
+.opts.g2,.opts.g3{grid-template-columns:1fr 1fr;gap:10px;border-top:0}.opts.g3{grid-template-columns:1fr 1fr 1fr}
+.opt{display:flex;align-items:center;gap:14px;min-height:58px;padding:12px 4px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;transition:background .15s}
+.opts:not(.g2):not(.g3) .opt:not(.fig)>span:last-child::before{content:none}
+.opt.on{background:var(--ink);color:#fff;padding-left:12px}.opt.on small{color:#bdbdb8}
+.opt small{display:block;color:var(--mute);font-size:12.5px;line-height:1.4;margin-top:1px}
+.opts .opt:not(.fig):not(.k)::after{content:'';margin-left:auto;flex:0 0 14px;height:14px;border:1px solid currentColor;opacity:.5}
+.opts .opt.on::after{background:#fff;opacity:1}
+.opt.k::before{counter-increment:o;content:counter(o,upper-alpha);flex:0 0 22px;font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--mute)}
+.opt.k.on::before{color:#fff}
+.opt .sw{flex:0 0 34px;height:22px;border:1px solid rgba(0,0,0,.12)}
+.g2 .opt,.g3 .opt{border:1px solid var(--line);justify-content:center;text-align:center}
+.opt.fig{flex-direction:column;justify-content:flex-start;padding:14px 6px 10px;gap:8px}
+.opt.fig svg{width:56px;height:88px}.opt.fig.on svg *{fill:#fff}
+.opt.fig b{font-size:12px;font-weight:500;line-height:1.3}
+.opt .il{flex:0 0 48px;height:36px;display:flex;align-items:center;justify-content:center}.opt .il svg{width:48px;height:36px}
+.opt.on .il path{stroke:#fff}.opt.on .il path[fill]:not([fill="none"]){fill:#333}
+.num{display:flex;gap:12px;align-items:flex-end;border-bottom:1px solid var(--ink)}
+.num input{flex:1;height:60px;border:0;background:none;font:300 40px 'Inter Tight',sans-serif;padding:0;width:100%;outline:none}
+.skip{display:block;margin:18px 0 0;background:none;border:0;padding:0;color:var(--mute);font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px}
+.prefill{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin:-10px 0 14px}
+.pbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pbtns label{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:92px;border:1px solid var(--ink);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;background:var(--card)}
+.pbtns label svg{width:24px;height:24px}
+.pcwrap{overflow:auto;max-height:52vh;background:var(--soft);-webkit-overflow-scrolling:touch}
+.pcwrap canvas{display:block;touch-action:manipulation}
+.ptgt{display:flex;gap:10px;margin:12px 0 8px;padding:12px 14px;background:var(--ink);color:#fff;font-size:13.5px}
+.ptgt b{font-weight:500}.ptgt small{opacity:.65;display:block;font-size:12px}
+.pts{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+.pts span{display:flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.pts i{width:16px;height:16px;border:1px solid rgba(0,0,0,.15)}
+.zoom{display:flex;gap:0;justify-content:flex-end;margin-top:8px}.zoom button{border:1px solid var(--line);background:none;padding:6px 14px;font-size:11px;letter-spacing:.1em}.zoom button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.dp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.dp button{border:1px solid var(--line);background:none;padding:12px 6px 10px}
+.dp button.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.dp .mini{position:relative;width:118px;height:118px;margin:0 auto;border-radius:50%;overflow:hidden}
+.dp .mini img{position:absolute;inset:18px;width:82px;height:82px;object-fit:cover;border-radius:50%}
+/* вводный экран */
+.intro h1{font-size:44px;line-height:1.02;font-weight:300;margin:34px 0 16px;letter-spacing:-.03em}
+.intro p.lead{color:#3d3d3a;margin:0 0 26px;font-size:15.5px}
+.spec{border-top:1px solid var(--ink);margin-top:8px}
+.spec div{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.spec b{font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding-top:2px}
+.strip{display:flex;height:6px;margin-top:22px}.strip i{flex:1}
+/* результат */
+.res-top{padding:28px 0 6px}
+.res-top h1{font-size:46px;line-height:1;font-weight:300;letter-spacing:-.035em;margin:8px 0 6px}
+.res-top .sub{color:var(--mute);font-size:14px}
+.tabs{display:flex;gap:22px;overflow-x:auto;margin:22px -20px 0;padding:12px 20px 0;scrollbar-width:none;position:sticky;top:0;background:var(--bg);z-index:3;border-bottom:1px solid var(--line)}
 .tabs::-webkit-scrollbar{display:none}
-.tabs button{flex:0 0 auto;padding:9px 15px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-weight:600;font-size:13px}
-.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-ul.do,ul.dont{margin:8px 0 0;padding:0;list-style:none}
-ul.do li,ul.dont li{padding:7px 0 7px 26px;position:relative;border-bottom:1px solid var(--line)}
-ul.do li:last-child,ul.dont li:last-child{border-bottom:0}
-ul.do li:before{content:'✓';position:absolute;left:2px;color:#3e7a4e;font-weight:700}
-ul.dont li:before{content:'✕';position:absolute;left:2px;color:#b04a3a;font-weight:700}
-.kv{display:grid;grid-template-columns:96px 1fr;gap:6px 12px;margin-top:8px;font-size:14px}
-.kv b{font-weight:600;color:var(--mute);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding-top:2px}
-.item{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.tabs button{flex:0 0 auto;padding:0 0 11px;border:0;background:none;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button.on{color:var(--ink);border-color:var(--ink)}
+.card{padding:26px 0 24px;border-bottom:1px solid var(--line)}
+.card h3{font-size:28px;line-height:1.1;font-weight:300;margin:6px 0 8px}
+.card p{margin:8px 0 0}
+.alt{font-size:12.5px;color:var(--mute);margin-top:8px;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:0 14px;margin-top:10px}
+.chip{font-size:12px;letter-spacing:.06em;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--line)}
+.pal{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;margin-top:16px}
+.pal div{aspect-ratio:3/4;position:relative}
+.pal.neu{grid-template-columns:repeat(4,1fr)}
+.pal.av div:after{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:#fff;transform:rotate(-50deg)}
+.pname{font-size:12px;color:var(--mute);margin-top:10px;line-height:1.6}
+ul.do,ul.dont{margin:12px 0 0;padding:0;list-style:none}
+ul.do li,ul.dont li{padding:9px 0 9px 22px;position:relative;border-bottom:1px solid var(--line);font-size:14px}
+ul.do li:before{content:'+';position:absolute;left:2px;font-weight:500}
+ul.dont li:before{content:'–';position:absolute;left:3px;color:var(--mute)}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:0;margin-top:12px;font-size:14px;border-top:1px solid var(--line)}
+.kv b,.kv span{padding:10px 0;border-bottom:1px solid var(--line)}
+.kv b{font-weight:500;color:var(--mute);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding-top:12px}
+.yy{position:relative;height:40px;margin:18px 0 6px}
+.yy .bar{position:absolute;left:0;right:0;top:22px;height:1px;background:var(--ink)}
+.yy .tk{position:absolute;top:18px;width:1px;height:9px;background:var(--ink)}
+.yy .dot{position:absolute;top:16px;width:13px;height:13px;margin-left:-6px;background:var(--ink)}
+.yy .l{position:absolute;top:0;font-size:10px;font-weight:500;letter-spacing:.16em;color:var(--mute)}
+.secs{display:grid;grid-template-columns:repeat(3,1fr);margin-top:16px;border-top:1px solid var(--line)}
+.secs div{padding:10px 0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--line)}.secs b{display:block;font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:500;margin-top:2px}
+/* вещи */
+.item{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
 .item:last-child{border-bottom:0}
-.item .ic{flex:0 0 58px;height:58px;border-radius:14px;background:#f1ebe2;display:flex;align-items:center;justify-content:center}
-.item .ic svg{width:46px;height:46px}
+.item .ic{flex:0 0 84px;height:100px;background:var(--soft);display:flex;align-items:center;justify-content:center}
+.item .ic svg{width:72px;height:86px}
 .item .tx{flex:1;min-width:0}
-.item .tx b{display:block;font-weight:600}
-.item .tx span{font-size:12.5px;color:var(--mute)}
-.shops{display:flex;gap:6px;margin-top:6px}
-.shops a{font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:5px 9px;border-radius:999px;border:1px solid var(--ink);color:var(--ink);text-decoration:none}
-.look{background:var(--card);border:1px solid var(--line);border-radius:22px;margin-top:14px;overflow:hidden}
-.look .board{background:#efe8de;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;padding:16px;position:relative}
-.look .board div{aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.55);border-radius:14px}
-.look .board svg{width:78%;height:78%}
-.look .lt{padding:14px 16px}
-.look .lt h3{margin:0;font-size:24px}
-.look .lt p{margin:4px 0 8px;color:var(--mute);font-size:13px}
-.look .row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-top:1px solid var(--line);font-size:13.5px}
-.look .row a{white-space:nowrap;margin-left:10px;font-size:11.5px;font-weight:700;color:var(--ink)}
-.drape{position:relative;width:250px;height:250px;margin:10px auto 0;border-radius:50%;overflow:hidden}
-.drape img{position:absolute;inset:34px;width:182px;height:182px;object-fit:cover;border-radius:50%}
-.drape .ring{position:absolute;inset:0;border-radius:50%}
-.dp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-.dp button{border:1.5px solid var(--line);border-radius:18px;background:var(--card);padding:10px 6px}
-.dp button.on{border-color:var(--ink)}
-.dp .mini{position:relative;width:120px;height:120px;margin:0 auto;border-radius:50%;overflow:hidden}
-.dp .mini img{position:absolute;inset:18px;width:84px;height:84px;object-fit:cover;border-radius:50%}
-.note{font-size:12.5px;color:var(--mute);text-align:center;margin-top:18px;line-height:1.5}
-.fade{animation:fd .35s ease}@keyframes fd{from{opacity:0;transform:translateY(8px)}}
+.item .tx b{display:block;font-weight:500;font-size:14.5px}
+.item .tx span{font-size:12.5px;color:var(--mute);display:block;margin-top:2px}
+.shops{display:flex;gap:16px;margin-top:8px}
+.shops a{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px}
+/* образы: лукбук */
+.look{margin-top:30px;border-top:1px solid var(--ink);padding-top:14px}
+.look .lh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.look .lh h3{font-size:22px;font-weight:300;padding-right:12px}.look .lh .kick{white-space:nowrap}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.lgrid .t{background:var(--soft);position:relative;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
+.lgrid .t.w{grid-column:span 2;aspect-ratio:8/5}
+.lgrid .t svg{width:70%;height:70%}
+.lgrid .t.w svg{width:44%;height:84%}
+.lgrid .t span{position:absolute;left:10px;bottom:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.lstrip{display:flex;height:5px;margin-top:2px}.lstrip i{flex:1}
+.look .row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.look .row a{white-space:nowrap;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-underline-offset:4px}
+/* звёзды */
+.cel{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.mono{flex:0 0 52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;letter-spacing:.08em;background:var(--ink);color:#fff}
+.cel .tx{flex:1;min-width:0}.cel .tx b{display:block;font-size:15px;font-weight:500}
+.pct{font-size:22px;font-weight:300;letter-spacing:-.02em}
+.why{display:flex;flex-wrap:wrap;gap:0 10px;margin-top:4px}.why span{font-size:11px;color:var(--mute)}
+.why span:not(:last-child):after{content:' ·';}
+.sbtn{margin-top:8px;border:0;background:none;padding:0;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px}
+.seg{display:grid;grid-template-columns:1fr 1fr;margin-top:18px;border:1px solid var(--ink)}.seg button{border:0;background:none;padding:11px 6px;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}.seg button.on{background:var(--ink);color:#fff}
+.src{font-size:12.5px;color:var(--mute);margin:12px 0 0;padding-left:18px}.src li{margin:5px 0}
+.note{font-size:11.5px;color:var(--mute);margin-top:30px;line-height:1.55;border-top:1px solid var(--line);padding-top:14px}
+.fade{animation:fd .3s ease}@keyframes fd{from{opacity:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
-.sec{display:flex;gap:4px;margin:2px 0 18px}.sec i{flex:1;height:3px;border-radius:2px;background:var(--line)}.sec i.on{background:var(--ink)}.sec i.done{background:#9a928a}
-.opt .il{flex:0 0 52px;height:40px;display:flex;align-items:center;justify-content:center}.opt .il svg{width:52px;height:40px}
-.skip{display:block;margin:14px auto 0;background:none;border:0;color:var(--mute);font-size:13px;text-decoration:underline;text-underline-offset:3px}
-.hint{background:#ebe4da;border-radius:14px;padding:10px 14px;font-size:13px;color:#5a544e;margin:-6px 0 16px;line-height:1.45}
-.prefill{font-size:12px;color:#3e7a4e;font-weight:600;margin:-8px 0 12px}
-.pbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pbtns label{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:84px;border-radius:18px;border:1.5px solid var(--ink);font-weight:600;font-size:14px;cursor:pointer;background:var(--card)}
-.pbtns label span{font-size:24px}
-.pcwrap{overflow:auto;max-height:52vh;border-radius:16px;background:#ddd5ca;-webkit-overflow-scrolling:touch}
-.pcwrap canvas{display:block;touch-action:manipulation}
-.ptgt{display:flex;align-items:center;gap:10px;margin:12px 0 8px;padding:10px 12px;border-radius:14px;background:var(--ink);color:#fff;font-size:14px}
-.ptgt b{font-weight:700}.ptgt small{opacity:.7;display:block;font-size:12px}
-.pts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.pts span{display:flex;align-items:center;gap:6px;padding:5px 10px 5px 5px;border-radius:999px;background:#efe9e1;font-size:12px;font-weight:600}
-.pts i{width:20px;height:20px;border-radius:50%;border:1px solid rgba(0,0,0,.1)}
-.zoom{display:flex;gap:6px;justify-content:flex-end;margin-top:8px}.zoom button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700}.zoom button.on{background:var(--ink);color:#fff}
-.yy{position:relative;height:34px;margin:14px 4px 4px}
-.yy .bar{position:absolute;left:0;right:0;top:14px;height:6px;border-radius:3px;background:linear-gradient(90deg,#d9a0b0,#e8e0d4 50%,#5a6070)}
-.yy .dot{position:absolute;top:7px;width:20px;height:20px;margin-left:-10px;border-radius:50%;background:var(--ink);border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3)}
-.yy .l{position:absolute;top:-6px;font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--mute)}
-.secs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-.secs div{background:#f1ebe2;border-radius:12px;padding:8px;text-align:center;font-size:12px}.secs b{display:block;font-size:13.5px}
-.cel{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
-.cel:last-child{border-bottom:0}
-.mono{flex:0 0 62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 22px 'Cormorant Garamond',serif;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.35)}
-.cel .tx{flex:1;min-width:0}.cel .tx b{display:block;font-size:15.5px}
-.pct{font:700 20px 'Cormorant Garamond',serif}
-.why{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}.why span{font-size:11px;padding:3px 8px;border-radius:999px;background:#efe9e1;font-weight:600}
-.sbtn{margin-top:8px;border:1.5px solid var(--ink);background:transparent;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700}
-.seg{display:flex;background:#e9e2d8;border-radius:999px;padding:3px;margin-top:12px}.seg button{flex:1;border:0;background:none;border-radius:999px;padding:8px;font-size:12.5px;font-weight:700}.seg button.on{background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.12)}
-.src{font-size:12.5px;color:var(--mute);margin:6px 0 0;padding-left:18px}.src li{margin:4px 0}
-.alt{font-size:12.5px;color:var(--mute);margin-top:6px}
-.item .ic{flex:0 0 74px!important;height:86px!important;background:#f1ebe2!important}.item .ic svg{width:66px!important;height:78px!important}
-.look .board{display:block!important;padding:0!important;aspect-ratio:auto!important}
-.look .board>div{display:none}
-.pbtns label svg{width:26px;height:26px}
+.seg3{grid-template-columns:1fr 1fr 1fr}
+.pb{display:block;font-weight:600;font-size:15px;margin-top:2px}
+.pm{display:block;font-size:13px;color:#3d3d3a;margin-top:1px}
+.pr{display:block;font-size:14px;font-weight:500;margin-top:4px}.pr i{font-style:normal;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-left:6px}
+.pc{display:block;font-size:12px;color:var(--mute);margin-top:6px}.pc b{color:var(--ink);font-weight:500}
+.alts{margin-top:8px;border-top:1px dashed var(--line);padding-top:6px}.alts a{display:block;font-size:12px;color:var(--mute);text-decoration:none;padding:2px 0}.alts a:before{content:'или  ';color:#b0afa9}
+.look .row small{color:var(--mute);font-size:12px}
+
 
 button,a{touch-action:manipulation}
 html{-webkit-text-size-adjust:100%}
-.ihint{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 12px);z-index:15;background:#1c1a18;color:#fff;border-radius:14px;padding:12px 44px 12px 14px;font-size:13.5px;line-height:1.45;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.ihint{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 12px);z-index:15;background:#1c1a18;color:#fff;border-radius:0;padding:12px 44px 12px 14px;font-size:13.5px;line-height:1.45;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 .ihint button{position:absolute;right:6px;top:6px;width:36px;height:36px;border:0;background:none;font-size:20px;color:#fff;cursor:pointer}
 </style>
 </head>
@@ -384,9 +407,150 @@ const CELEBS=[
   w:[['jacket','outer','Бомбер','бомбер мужской','#2a5a3a','изумрудный'],['tee','top','Футболка','футболка мужская','#f2ece0','молочный'],['trousers','bottom','Укороченные чиносы','чиносы мужские укороченные','#c8a878','кэмел'],['knit','layer','Джемпер','джемпер мужской','#c86a3a','рыжий'],['blazer','layer','Пиджак','пиджак мужской','#2a3a6a','синий'],['sneaker','shoes','Кеды','кеды мужские','#f2f2f2','белый'],['jeans','bottom','Джинсы','джинсы мужские','#5a6a80','деним'],['cap','acc','Кепка','кепка мужская','#2a3a6a','синий']]}
 ];
 
+/* ===== Каталог реальных моделей (цены — на момент проверки, ноябрь 2026) =====
+   [пол, категория, уровень 1-доступно 2-средне 3-премиум, бренд, модель, цена ₽, hex цвета модели|'' , цвет|'' , источник] */
+const SRC={
+ hd:['Яндекс Карты · Henderson','https://yandex.com/maps/org/henderson/1016342797/prices/'],
+ hdj:['Яндекс Карты · Henderson','https://yandex.com/maps/org/105596866782/'],
+ s12:['Яндекс Карты · 12 STOREEZ','https://yandex.com/maps/org/12storeez/116961629345/prices/'],
+ s12a:['Яндекс Карты · 12 STOREEZ','https://yandex.com/maps/org/116961629345/'],
+ bml:['Яндекс Карты · BML','https://yandex.com.tr/maps/org/bml/1344863236/prices/'],
+ tjs:['Т—Ж · бренды мужских костюмов','https://t-j.ru/good-men-suits/'],
+ tjm:['Т—Ж · российские бренды для мужчин','https://t-j.ru/list/wear-russian-men/'],
+ tje:['Т—Ж · бренды из Екатеринбурга','https://t-j.ru/list/fashion-brands-ekb/'],
+ bf:['Яндекс Карты · Befree','https://yandex.com/maps/org/befree/226178753203/prices/'],
+ bf2:['Яндекс Карты · Befree','https://yandex.com/maps/org/befree/1208678806/prices/'],
+ bf3:['Яндекс Карты · Befree','https://yandex.com/web-maps/org/befree/47872919502/prices/'],
+ bfm:['Яндекс Маркет · Befree','https://market.yandex.ru/category/odezhda-basic-ibw'],
+ ost:['Яндекс Маркет · O\'STIN','https://market.yandex.ru/cc/9USwEc'],
+ lms:['Собака.ru · новинки Lime','https://www.sobaka.ru/fashion/stuff/177364'],
+ lms2:['Собака.ru · новинки Lime','https://www.sobaka.ru/fashion/stuff/177609'],
+ lmr:['РБК Стиль · Lime','https://style.rbc.ru/items/630e18629a7947f2dbe774b7'],
+ lmb:['Яндекс Карты · Lime','https://maps.yango.com/org/lime/84021233151/']
+};
+const CAT=[
+ /* ——— МУЖЧИНЫ ——— */
+ ['m','blazer',1,'Lime','Блейзер мужской, костюмная линия',11999,'','','tjs'],
+ ['m','blazer',1,'20Line','Пиджак костюмный',12999,'','','tjs'],
+ ['m','blazer',2,'Roshi','Пиджак',20900,'','','tjs'],
+ ['m','blazer',2,'Gate31','Пиджак',34990,'','','tjs'],
+ ['m','blazer',3,'Brier','Пиджак',37900,'','','tjs'],
+ ['m','blazer',3,'BML','Пиджак Cosimo J, ткань Drago Natural B stretch',61300,'','','bml'],
+ ['m','blazer',3,'BML','Пиджак Andre J, шерсть Super 150\'S',71650,'','','bml'],
+ ['m','trousers',1,'Lime','Брюки костюмные',5999,'','','tjs'],
+ ['m','trousers',1,'20Line','Брюки костюмные',6999,'','','tjs'],
+ ['m','trousers',2,'Idol','Брюки',10990,'','','tjm'],
+ ['m','trousers',2,'BML','Брюки Kevin TR, ткань Reda ATTO',11350,'','','bml'],
+ ['m','trousers',2,'Roshi','Брюки',13900,'','','tjs'],
+ ['m','trousers',3,'Brier','Брюки',15500,'','','tjs'],
+ ['m','trousers',3,'BML','Брюки Andre TR, ткань Reda Super 110\'S',16200,'','','bml'],
+ ['m','trousers',3,'Gate31','Брюки',20990,'','','tjs'],
+ ['m','shirt',1,'Henderson','Рубашка SHL-2335-S, длинный рукав','2995','#2a3050','тёмно-синяя','hd'],
+ ['m','shirt',1,'Henderson','Рубашка SHL-2227-S, длинный рукав','2995','#8a8458','хаки','hd'],
+ ['m','shirt',1,'Henderson','Рубашка SHL-2292-S, длинный рукав','3995','#3a5a40','зелёная','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2320-S, длинный рукав',5995,'#f2f2f0','белая','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2479-S, длинный рукав',6499,'#a8c0e0','голубая','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2489-R, длинный рукав',6499,'#9a9a9a','серая','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2477-R, длинный рукав',6499,'#6a4a30','коричневая','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2487-S, длинный рукав',6499,'#6a1e2a','бордо','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2445-R, длинный рукав',5995,'#e8c4cc','розовая','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2484-R, длинный рукав',6999,'#d8c8a8','бежевая','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2482-R, длинный рукав',6999,'#1e2a44','тёмно-синяя','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2411-R, длинный рукав',6999,'#1a1a1a','чёрная','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2392-R, длинный рукав',6995,'#7a7a50','хаки','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2493-R, длинный рукав',7999,'#b0583a','терракотовая','hd'],
+ ['m','shirt',2,'Henderson','Рубашка SHL-2413-R, длинный рукав',6999,'#8a6a4a','кофейная','hd'],
+ ['m','shirt',3,'Tryyt','Рубашка',13900,'','','tjm'],
+ ['m','shirt',3,'Henderson','Рубашка SHL-2454-S, длинный рукав',14999,'#2a3050','тёмно-синяя','hd'],
+ ['m','shirt',3,'Henderson','Рубашка SHL-2367-S, длинный рукав',16999,'#6a4a30','коричневая','hd'],
+ ['m','shirt',3,'Mere','Рубашка',17900,'','','tjm'],
+ ['m','polo',2,'Henderson','Поло',4599,'','','tjm'],
+ ['m','knit',1,'Zarina','Джемпер мужской',2999,'','','tjm'],
+ ['m','knit',3,'Grunge John Orchestra','Свитер',25900,'','','tjm'],
+ ['m','tee',1,'Befree','Майка мужская',1999,'','','tjm'],
+ ['m','coat',1,'O\'STIN','Пальто классическое мужское',8956,'','','ost'],
+ ['m','coat',2,'All We Need','Полупальто',18193,'','','tjm'],
+ ['m','coat',2,'Gate31','Тренч',24144,'','','tjm'],
+ ['m','jeans',2,'Noconcept','Джинсы',12000,'','','tjm'],
+ ['m','jacket',2,'Sorry, I\'m Not','Куртка',18500,'','','tjm'],
+ ['m','jacket',2,'Humanist','Куртка',24900,'','','tjm'],
+ ['m','leather',3,'Henderson','Куртка JK-0524 из кожи',45999,'#6a6a4a','хаки','hdj'],
+ ['m','leather',3,'Henderson','Куртка JK-0577 из кожи ягнёнка',49999,'#1a1a1a','чёрная','hdj'],
+ ['m','leather',3,'Henderson','Куртка-бомбер JK-0605 из замши',49999,'#b08a5a','кэмел','hdj'],
+ ['m','leather',3,'Henderson','Куртка JK-0606 из кожи',49999,'#5a3a24','коричневая','hdj'],
+ ['m','sneaker',1,'Henderson','Кроссовки SS-0908',4895,'#f2f2f0','белые','hd'],
+ ['m','sneaker',1,'Henderson','Кроссовки SS-0907',4595,'#2a3050','тёмно-синие','hd'],
+ ['m','sneaker',1,'Henderson','Кроссовки SS-0906',4595,'#7a7a50','хаки','hd'],
+ ['m','sneaker',2,'Henderson','Кроссовки SS-0876',9595,'#f2f2f0','белые','hd'],
+ ['m','sneaker',2,'Henderson','Кроссовки SS-0815',9995,'#d8c8a8','бежевые','hd'],
+ ['m','sneaker',2,'Henderson','Кроссовки SS-0724',9595,'#6a4a30','коричневые','hd'],
+ ['m','sneaker',3,'Henderson','Кроссовки SS-0950',13999,'#1a1a1a','чёрные','hd'],
+ ['m','sneaker',3,'Henderson','Кроссовки SS-0952',14999,'#d8c8a8','бежевые','hd'],
+ ['m','sneaker',3,'Henderson','Кроссовки SS-0948',14999,'#6a4a30','коричневые','hd'],
+ ['m','cap',1,'Henderson','Шапка HT-0327',2599,'#1a1a1a','чёрная','hd'],
+ ['m','cap',1,'Henderson','Шапка HT-0327',2599,'#d8c8a8','бежевая','hd'],
+ ['m','cap',1,'Henderson','Шапка HT-0327',2599,'#c8c8c8','светло-серая','hd'],
+ ['m','cap',1,'Henderson','Шапка HT-0327',2599,'#6a4a30','коричневая','hd'],
+ ['m','cap',2,'Henderson','Шапка HT-0281',4999,'#7a7a7a','серая','hd'],
+ ['m','cap',2,'Henderson','Шапка HT-0281',4999,'#2a3050','тёмно-синяя','hd'],
+ ['m','cap',3,'Henderson','Шапка HT-0329',6999,'#d8c8a8','бежевая','hd'],
+ ['m','cap',3,'Henderson','Шапка HT-0329',6999,'#1a1a1a','чёрная','hd'],
+ /* ——— ЖЕНЩИНЫ ——— */
+ ['f','coat',1,'Lime','Пальто из смесовой шерсти',13999,'','','lmr'],
+ ['f','coat',2,'Lime','Пальто',23999,'','','lms'],
+ ['f','coat',3,'Ushatava','Тренч',39900,'','','tje'],
+ ['f','coat',3,'12 STOREEZ','Пальто Colette из шерсти мериноса',49000,'','','s12a'],
+ ['f','coat',3,'12 STOREEZ','Тренч из итальянского хлопка',59000,'','','s12'],
+ ['f','blazer',2,'Lime','Блейзер',15999,'','','lms'],
+ ['f','blazer',3,'12 STOREEZ','Пиджак Jermyn из кашемира',87000,'','','s12a'],
+ ['f','blouse',1,'Befree','Блузка с подплечниками на запах',1299,'','','bf'],
+ ['f','blouse',1,'Befree','Блузка шифоновая с кружевом',2799,'','','bf'],
+ ['f','blouse',1,'Befree','Блузка свободная на пуговицах',3999,'','','bf'],
+ ['f','blouse',2,'Lime','Блуза',7999,'','','lms2'],
+ ['f','blouse',2,'Lime','Рубашка',7999,'','','lms'],
+ ['f','blouse',3,'12 STOREEZ','Рубашка из мерсеризованного хлопка',13000,'','','s12'],
+ ['f','blouse',3,'12 STOREEZ','Рубашка Bureau из хлопка и шёлка',17000,'','','s12'],
+ ['f','blouse',3,'12 STOREEZ','Блузка Alice Blue из шёлка',25000,'','','s12'],
+ ['f','blouse',3,'12 STOREEZ','Рубашка Magnolia из шёлка',27000,'','','s12'],
+ ['f','knit',2,'Ushatava','Кардиган',15900,'','','tje'],
+ ['f','knit',3,'12 STOREEZ','Кардиган Oat из шерсти и хлопка',28000,'','','s12a'],
+ ['f','knit',3,'12 STOREEZ','Джемпер Grandpa\'s из кашемира',34000,'','','s12a'],
+ ['f','knit',3,'12 STOREEZ','Джемпер Aurora из кашемира',39000,'','','s12'],
+ ['f','tee',1,'Befree','Лонгслив из жатой ткани с воротником-стойкой',399,'','','bf'],
+ ['f','tee',2,'12 STOREEZ','Лонгслив Kim из модала и шёлка',7800,'','','s12'],
+ ['f','tee',3,'12 STOREEZ','Футболка Silkline из шёлка и хлопка',17000,'','','s12a'],
+ ['f','trousers',1,'Befree','Брюки костюмные прямые на завязках',2999,'','','bf3'],
+ ['f','trousers',1,'Befree','Брюки зауженные костюмные со средней посадкой',3599,'','','bf2'],
+ ['f','trousers',2,'Ushatava','Брюки',12900,'','','tje'],
+ ['f','trousers',3,'12 STOREEZ','Брюки Gelato из тонкого льна',15000,'','','s12a'],
+ ['f','trousers',3,'12 STOREEZ','Брюки Javier',19000,'','','s12a'],
+ ['f','trousers',3,'12 STOREEZ','Брюки Jermyn из кашемира',65000,'','','s12a'],
+ ['f','jeans',1,'Befree','Джинсы мом Basic',885,'','','bfm'],
+ ['f','jeans',3,'12 STOREEZ','Джинсы Selvedge Straight 3212',22000,'','','s12a'],
+ ['f','skirt',2,'Lime','Юбка',6999,'','','lms2'],
+ ['f','skirt',2,'Lime','Юбка',9999,'','','lms2'],
+ ['f','dress',1,'Befree','Платье-комбинация мини атласное',1999,'','','bf'],
+ ['f','dress',3,'12 STOREEZ','Платье Carolyn из шерсти и шёлка',24000,'','','s12a'],
+ ['f','overshirt',3,'12 STOREEZ','Рубашка-жакет Affogato',22000,'','','s12a'],
+ ['f','pump',3,'12 STOREEZ','Лодочки из мягкой замши',22000,'','','s12'],
+ ['f','pump',3,'12 STOREEZ','Туфли Rosati',24000,'','','s12'],
+ ['f','loafer',3,'12 STOREEZ','Лоферы Ivy из кожи телёнка',26000,'','','s12a'],
+ ['f','sneaker',3,'12 STOREEZ','Кеды Sorbonne',24000,'','','s12'],
+ ['f','sneaker',3,'12 STOREEZ','Кроссовки Central Park',24000,'','','s12'],
+ ['f','boot',3,'12 STOREEZ','Ботильоны из кожи',34000,'','','s12'],
+ ['f','belt',1,'Lime','Базовый ремень',1599,'','','lmb'],
+ ['f','belt',3,'12 STOREEZ','Ремень Slim',12000,'','','s12'],
+ ['f','belt',3,'12 STOREEZ','Ремень Classic',12000,'','','s12'],
+ ['f','bag',3,'12 STOREEZ','Сумка Minimalist',39000,'','','s12'],
+ ['f','bag',3,'12 STOREEZ','Сумка Elysee',39000,'','','s12'],
+ ['f','bag',3,'12 STOREEZ','Сумка Uffizi',45000,'','','s12'],
+ ['f','cap',2,'12 STOREEZ','Шапка из шерсти мериноса',7800,'','','s12']
+].map(r=>({sx:r[0],cat:r[1],tier:r[2],brand:r[3],model:r[4],price:+r[5],hex:r[6],cname:r[7],src:r[8]}));
+const TIER={1:'Доступно',2:'Средне',3:'Премиум'};
+
 const app=document.getElementById('app');
 const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-let A=store.get('tp_a2',{}),STEP=0,TAB='sum',PHOTO=null,R=null,CEL=null,CMODE='mine',WMODE='caps';
+let BUD=store.get('tp_b',2),A=store.get('tp_a2',{}),STEP=0,TAB='sum',PHOTO=null,R=null,CEL=null,CMODE='mine',WMODE='caps';
 const save=()=>store.set('tp_a2',A);
 const clamp=(x,a=-1,b=1)=>Math.max(a,Math.min(b,x));
 /* ===== Иконки одежды ===== */
@@ -424,11 +588,11 @@ function fig(sh,sex){const W={m:{trap:[30,20,22],inv:[36,18,18],rect:[26,25,26],
 
 /* ===== Эскизы вещей (fashion flats) ===== */
 const VB={oxford:'0 0 200 110',loafer:'0 0 200 110',pump:'0 0 200 110',sneaker:'0 0 200 110',boot:'0 0 200 110',belt:'0 0 200 110',bag:'0 0 200 180',cap:'0 0 200 140'};
-function ill(t,c){const dk=shade(c,.62),lt=light(c);const ol=lt?'#b9b0a4':shade(c,.55);
- const S=`stroke="${ol}" stroke-width="1.3" stroke-linejoin="round"`;const D=`fill="none" stroke="${dk}" stroke-opacity="${lt?.45:.7}" stroke-width="1.2"`;
- const st=`fill="none" stroke="${lt?'#a89e90':shade(c,1.6)}" stroke-opacity=".7" stroke-width=".9" stroke-dasharray="2.5 2"`;
- const P=d=>`<path d="${d}" fill="${c}" ${S}/><path d="${d}" fill="url(#tpg)"/>`;
- const Pd=d=>`<path d="${d}" fill="${dk}" fill-opacity=".35" ${S}/>`;
+function ill(t,c){const dk=shade(c,.62),lt=light(c);const n_=parseInt(c.slice(1),16);const dark=((n_>>16)*.3+(n_>>8&255)*.59+(n_&255)*.11)<70;const ol='#1a1a1a';
+ const S=`stroke="${ol}" stroke-width="1.1" stroke-linejoin="round"`;const D=`fill="none" stroke="${dark?'#fff':'#1a1a1a'}" stroke-opacity="${dark?.4:.45}" stroke-width=".9"`;
+ const st=`fill="none" stroke="${dark?'#fff':'#1a1a1a'}" stroke-opacity=".35" stroke-width=".7" stroke-dasharray="2 2"`;
+ const P=d=>`<path d="${d}" fill="${c}" ${S}/>`;
+ const Pd=d=>`<path d="${d}" fill="${dark?'#fff':'#000'}" fill-opacity=".08" ${S}/>`;
  const btn=(x,y,r=2.6)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${lt?'#d8d0c4':shade(c,.45)}" stroke="${lt?'#a89e90':shade(c,1.4)}" stroke-width=".6"/>`;
  const F={
  shirt:()=>P('M62 40 L84 30 L100 44 L116 30 L138 40 L160 52 L178 150 L180 196 L162 199 L156 112 L150 118 L150 224 Q100 232 50 224 L50 118 L44 112 L38 199 L20 196 L22 150 L40 52Z')
@@ -482,7 +646,7 @@ function ill(t,c){const dk=shade(c,.62),lt=light(c);const ol=lt?'#b9b0a4':shade(
  bag:()=>`<path d="M62 64 Q62 14 100 14 Q138 14 138 64" fill="none" stroke="${dk}" stroke-width="7"/>`+P('M26 62 L174 62 L184 170 L16 170Z')+Pd('M26 62 L174 62 L166 104 L34 104Z')+`<rect x="92" y="96" width="16" height="16" rx="3" fill="#c9b48a" stroke="#9a8460"/><path d="M20 160 L180 160" ${st}/><path d="M30 66 L170 66" ${st}/>`,
  cap:()=>P('M30 104 Q30 44 100 40 Q170 44 170 104Z')+P('M14 104 L186 104 Q186 118 100 120 Q14 118 14 104Z')+`<path d="M34 92 Q100 82 166 92" stroke="${dk}" stroke-width="7" fill="none" stroke-opacity=".6"/>`
  };return {vb:VB[t]||'0 0 200 240',b:(F[t]||F.tee)()}}
-function ic(t,c){const r=ill(t,c);return `<svg viewBox="${r.vb}" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 2px 3px rgba(40,30,20,.18))">${r.b}</svg>`}
+function ic(t,c){const r=ill(t,c);return `<svg viewBox="${r.vb}" xmlns="http://www.w3.org/2000/svg">${r.b}</svg>`}
 /* общие defs: объём ткани и фактура денима */
 document.body.insertAdjacentHTML('afterbegin',`<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="tpg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".24"/></linearGradient><pattern id="tpTw" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0 L0 4" stroke="#000" stroke-opacity=".18" stroke-width="1.2"/></pattern><filter id="tpsh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#3a2a1a" flood-opacity=".22"/></filter></defs></svg>`);
 /* доска образа: раскладка как у стилиста */
@@ -542,7 +706,7 @@ function rStep(){const q=Q[STEP];const v=A[q.k];let body='';
  if(q.type==='num')body=`<div class="num"><input type="number" inputmode="numeric" placeholder="${A.sex==='f'?'165':'178'}" value="${v||''}" oninput="A.height=+this.value;save();document.getElementById('nx').disabled=!(A.height>120&&A.height<230)"><span class="kick">см</span></div>`;
  else if(q.type==='fig'){const sx=A.sex||'m';body=`<div class="opts g3">${Object.entries(SHAPES[sx]).map(([k,s])=>`<button class="opt fig ${v===k?'on':''}" onclick="pick('shape','${k}')">${fig(k,sx)}<b>${s.n}</b></button>`).join('')}</div>`}
  else if(q.type==='sw')body=`${A.ph&&A.ph.pre&&A.ph.pre[q.k]===v?'<p class="prefill">✓ Предвыбрано по фото — проверьте</p>':''}<div class="opts">${q.sw.map(o=>`<button class="opt ${v===o[0]?'on':''}" onclick="pick('${q.k}','${o[0]}')"><span class="sw" style="background:${o[2]}"></span><span>${o[1]}</span></button>`).join('')}</div>`;
- else if(q.type==='k'){const il=q.fig==='sh'?shSvg:q.fig==='jaw'?jawSvg:null;body=`<div class="opts">${['A','B','C','D','E'].map(L=>{const o=q.o[L];return `<button class="opt ${v===L?'on':''}" onclick="pick('${q.k}','${L}')">${il?`<span class="il">${il(L)}</span>`:''}<span>${gt(o[0])}${o[1]?`<small>${o[1]}</small>`:''}</span></button>`}).join('')}</div><button class="skip" onclick="pick('${q.k}','X')">Не знаю — пропустить</button>`}
+ else if(q.type==='k'){const il=q.fig==='sh'?shSvg:q.fig==='jaw'?jawSvg:null;body=`<div class="opts">${['A','B','C','D','E'].map(L=>{const o=q.o[L];return `<button class="opt k ${v===L?'on':''}" onclick="pick('${q.k}','${L}')">${il?`<span class="il">${il(L)}</span>`:''}<span>${gt(o[0])}${o[1]?`<small>${o[1]}</small>`:''}</span></button>`}).join('')}</div><button class="skip" onclick="pick('${q.k}','X')">Не знаю — пропустить</button>`}
  else if(q.type==='photo')body=rPhoto();
  else if(q.type==='drape')body=rDrape();
  else body=`<div class="opts ${q.g||''}">${q.o.map(o=>`<button class="opt ${v===o[0]?'on':''}" onclick="pick('${q.k}','${o[0]}')"><span>${o[1]}${o[2]?`<small>${o[2]}</small>`:''}</span></button>`).join('')}</div>`;
@@ -623,6 +787,15 @@ function makeLooks(C,names,N){const by=s=>C.filter(x=>x.slot===s);const tops=by(
   if(i%2===0||f===3)items.push(pickF(lay,i));if(i===0||i===N-1)items.push(pickF(out,0));items.push(pickF(sh,i));if(acc.length)items.push(pickF(acc,i));
   L.push({n:names[i%names.length],items:items.filter(Boolean).filter((x,j,a)=>a.indexOf(x)===j)})}return L}
 
+
+/* ===== Подбор реальных моделей из каталога ===== */
+const rub=n=>n.toLocaleString('ru-RU').replace(/,/g,' ')+' ₽';
+function prods(x){const sx=R?R.sex:'m';const c=CAT.filter(p=>p.sx===sx&&p.cat===x.icon);if(!c.length)return [];const L=hex2lab(x.col[0]);
+ return c.map(p=>({p,s:Math.abs(p.tier-BUD)*12+(p.hex?dE(hex2lab(p.hex),L)/4:4)})).sort((a,b)=>a.s-b.s).map(z=>z.p).filter((p,i,arr)=>arr.findIndex(q=>q.brand===p.brand&&q.model===p.model)===i)}
+function withProd(x,used){const ps=prods(x);const key=q=>q.brand+q.model+q.cname;let k=0;if(used){const f=ps.findIndex(q=>!used.has(key(q)));k=f<0?0:f}const p=ps[k]||null;if(used&&p)used.add(key(p));return {...x,p,alts:ps.filter((q,i)=>i!==k).slice(0,2),draw:p&&p.hex?p.hex:x.col[0]}}
+const budgetSeg=re=>`<div class="seg seg3">${[1,2,3].map(t=>`<button class="${BUD===t?'on':''}" onclick="BUD=${t};store.set('tp_b',${t});${re}">${TIER[t]}</button>`).join('')}</div>`;
+const pq=p=>`${p.brand} ${p.model}`.replace(/,.*$/,'');
+
 /* ===== Похожие знаменитости ===== */
 function matchCelebs(){const S=SEASONS[R.season],me=IDS[R.id];const lab=(list,k)=>{const x=list.find(z=>z[0]===k);return x?hex2lab(x[2]):null};
  R.celebs=CELEBS.map((c,i)=>{let sc=0;const why=[];
@@ -647,25 +820,28 @@ const IDK=icon=>['blazer','coat','dress','knit','trousers'].includes(icon)&&R&&R
 /* ===== Ссылки ===== */
 const SHOP={lm:q=>'https://www.lamoda.ru/catalogsearch/result/?q='+encodeURIComponent(q),wb:q=>'https://www.wildberries.ru/catalog/0/search.aspx?search='+encodeURIComponent(q),oz:q=>'https://www.ozon.ru/search/?text='+encodeURIComponent(q),lm:q=>'https://www.lamoda.ru/catalogsearch/result/?q='+encodeURIComponent(q)};
 const shops=q=>`<div class="shops"><a href="${SHOP.lm(q)}" target="_blank" rel="noopener">LAMODA</a><a href="${SHOP.wb(q)}" target="_blank" rel="noopener">WB</a><a href="${SHOP.oz(q)}" target="_blank" rel="noopener">OZON</a></div>`;
-const itemRow=x=>`<div class="item"><div class="ic">${ic(x.icon,x.col[0])}</div><div class="tx"><b>${x.name}</b><span>${x.col[1]}${x.cut?' · '+x.cut:''}</span>${shops(x.query)}</div></div>`;
-const lookCard=(L,i)=>`<div class="look"><div class="board">${board(L.items)}</div><div class="lt"><span class="kick">Образ ${i+1}</span><h3>${L.n}</h3><p>${L.items.map(x=>x.col[1]).filter((v,j,a)=>a.indexOf(v)===j).join(' + ')}</p>${L.items.map(x=>`<div class="row"><span>${x.name} · ${x.col[1]}</span><a href="${SHOP.lm(x.query)}" target="_blank" rel="noopener">Ламода →</a></div>`).join('')}</div></div>`;
-const mono=c=>{const cs=c.w.slice(0,4).map(w=>w[4]);return `<div class="mono" style="background:conic-gradient(${cs.map((x,i)=>`${x} ${i*25}% ${(i+1)*25}%`).join(',')})">${c.n.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>`};
+const itemRow=(x0,used)=>{const x=withProd(x0,used),p=x.p;return `<div class="item"><div class="ic">${ic(x.icon,x.draw)}</div><div class="tx"><span class="kick" style="letter-spacing:.12em">${x.name}</span>${p?`<b class="pb">${p.brand}</b><span class="pm">${p.model}${p.cname?' · '+p.cname:''}</span><span class="pr">${rub(p.price)} <i>${TIER[p.tier]}</i></span>`:`<b class="pb">Модель не найдена</b><span class="pm">${x.col[1]}${x.cut?' · '+x.cut:''} — ищите по запросу</span>`}
+ <div class="shops">${p?`<a href="${SRC[p.src][1]}" target="_blank" rel="noopener">Источник ↗</a><a href="${SHOP.lm(pq(p))}" target="_blank" rel="noopener">Ламода ↗</a><a href="${SHOP.wb(pq(p))}" target="_blank" rel="noopener">WB ↗</a>`:`<a href="${SHOP.lm(x.query)}" target="_blank" rel="noopener">Ламода ↗</a><a href="${SHOP.wb(x.query)}" target="_blank" rel="noopener">WB ↗</a><a href="${SHOP.oz(x.query)}" target="_blank" rel="noopener">Ozon ↗</a>`}</div>
+ ${p&&!p.hex?`<span class="pc">Берите в цвете: <b>${x.col[1]}</b></span>`:''}${x.alts.length?`<div class="alts">${x.alts.map(q=>`<a href="${SRC[q.src][1]}" target="_blank" rel="noopener">${q.brand} — ${q.model}${q.cname?', '+q.cname:''} · ${rub(q.price)}</a>`).join('')}</div>`:''}</div></div>`};
+const lookCard=(L,i)=>{const U=new Set();const its=L.items.map(x=>withProd(x,U));const cols=its.map(x=>x.draw).filter((v,j,a)=>a.indexOf(v)===j);const sum=its.reduce((s,x)=>s+(x.p?x.p.price:0),0);const nf=its.filter(x=>!x.p).length;
+ return `<div class="look"><div class="lh"><h3>${String(i+1).padStart(2,'0')} — ${L.n}</h3><span class="kick">${sum?'≈ '+rub(sum):''}</span></div><div class="lgrid">${its.map(x=>`<div class="t">${ic(x.icon,x.draw)}<span>${x.p?x.p.brand:x.col[1]}</span></div>`).join('')}${its.length%2?`<div class="t" style="background:${cols[0]}22"></div>`:''}</div><div class="lstrip">${cols.map(c=>`<i style="background:${c}"></i>`).join('')}</div>
+ ${its.map(x=>`<div class="row"><span>${x.p?`<b>${x.p.brand}</b> ${x.p.model}${x.p.cname?', '+x.p.cname:''}<br><small>${rub(x.p.price)}${x.p.hex?'':' · цвет: '+x.col[1]}</small>`:`${x.name} · ${x.col[1]}<br><small>модель не найдена</small>`}</span><a href="${x.p?SRC[x.p.src][1]:SHOP.lm(x.query)}" target="_blank" rel="noopener">${x.p?'Источник':'Ламода'} ↗</a></div>`).join('')}${nf?`<p class="alt">${nf} ${nf===1?'вещь':'вещи'} без модели в каталоге — ссылка ведёт в поиск.</p>`:''}</div>`};
+const mono=c=>`<div class="mono">${c.n.split(' ').map(w=>w[0]).join('').slice(0,2)}</div>`;
 
 /* ===== Экраны ===== */
 function heroArt(){const S=R?SEASONS[R.season]:SEASONS.wautumn;const cs=S.col.slice(0,6).map(x=>x[0]);
  return `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="220" fill="#e9e2d8"/>${cs.map((c,i)=>`<rect x="${30+i*58}" y="${40+(i%2)*14}" width="46" height="${140-(i%2)*14}" rx="23" fill="${c}"/>`).join('')}<path d="M0 200 Q200 170 400 200 L400 220 L0 220Z" fill="#f4f0ea"/></svg>`}
 function go(s){({intro:rIntro,res:rRes,cel:rCel})[s]();window.scrollTo(0,0)}
 function rIntro(){R=store.get('tp_r2',null);
- app.innerHTML=`<div class="fade"><div class="top"><span class="logo">ТИПАЖ</span>${R?`<button class="lnk" onclick="go('res')">Мой результат</button>`:''}</div>
- <div class="hero">${heroArt()}</div>
- <h1 style="font-size:46px;line-height:1;margin:22px 0 8px">Ваш стиль — по вашей внешности</h1>
- <p style="color:var(--mute);margin:0">Тест по системе Дэвида Кибби (10 типажей), цветотип по 12 сезонам с замером цвета по фото, похожие знаменитости, капсула и образы со ссылками на магазины.</p>
- <div class="card" style="font-size:14px"><div class="kv"><b>Разделы</b><span>вы · скелет · тело · лицо · окраска · образ жизни</span><b>Время</b><span>8–10 минут, 28 коротких вопросов</span><b>Понадобится</b><span>зеркало, дневной свет, селфи (можно из галереи)</span><b>Данные</b><span>фото не сохраняется и не отправляется; ответы — только на телефоне</span></div></div>
- <button class="btn" onclick="STEP=0;rStep()">${R?'Пройти заново':'Начать'}</button></div>`}
+ app.innerHTML=`<div class="fade intro"><div class="top"><span class="logo">ТИПАЖ</span>${R&&R.id?`<button class="lnk" onclick="go('res')">Мой профиль</button>`:''}</div>
+ <h1>Стиль,<br>основанный<br>на вашей внешности</h1>
+ <p class="lead">Профессиональная методика в формате анкеты: типаж по системе Дэвида Кибби, цветотип по 12 сезонам с замером цвета по фото, капсульный гардероб и образы.</p>
+ <div class="spec"><div><b>Методика</b><span>Kibbe Image ID · Sci\\ART 12 seasons</span></div><div><b>Разделы</b><span>Вы · Скелет · Тело · Лицо · Окраска · Образ жизни</span></div><div><b>Время</b><span>8–10 минут, 28 вопросов</span></div><div><b>Нужно</b><span>Зеркало, дневной свет, селфи</span></div><div><b>Данные</b><span>Фото не сохраняется и не отправляется</span></div></div>
+ <button class="btn" onclick="STEP=0;rStep()">${R&&R.id?'Пройти заново':'Начать'}</button></div>`}
 function rRes(){if(!R||!R.id){go('intro');return}const S=SEASONS[R.season],SH=SHAPES[R.sex][R.shape],ID=IDS[R.id],T=TYPES[ID.fam],F=FACES[R.face];
  const tabs=[['sum','Типаж'],['col','Цвета'],['fig','Фигура'],['cel','Звёзды'],['wr','Гардероб'],['lk','Образы'],['hair','Прическа'],['how','Метод']];let b='';
  if(TAB==='sum')b=`<div class="card"><span class="kick">Типаж по Кибби</span><h3>${ID.n}</h3><span class="alt">${ID.en}</span>
-  <div class="yy"><span class="l" style="left:0">ИНЬ · МЯГКОСТЬ</span><span class="l" style="right:0">ЯН · ОСТРОТА</span><div class="bar"></div><div class="dot" style="left:${(R.yy+1)/2*100}%"></div></div>
+  <div class="yy"><span class="l" style="left:0">ИНЬ · МЯГКОСТЬ</span><span class="l" style="right:0">ЯН · ОСТРОТА</span><div class="bar"></div>${[0,25,50,75,100].map(x=>`<i class="tk" style="left:${x}%"></i>`).join('')}<div class="dot" style="left:${(R.yy+1)/2*100}%"></div></div>
   <p style="margin:10px 0 0">${ID.d}</p><div class="secs">${R.secs.map(s=>`<div>${s[0]}<b>${s[1]}</b></div>`).join('')}</div></div>
   <div class="card"><span class="kick">Цветотип</span><h3>${S.n}</h3><p style="margin:4px 0 0">${S.d}</p><div class="pal">${S.col.slice(0,6).map(x=>`<div style="background:${x[0]}"></div>`).join('')}</div><p class="alt">Соседний вариант: ${SEASONS[R.s2].n}${A.ph?' · учтены замеры по фото':''}</p></div>
   <div class="card"><span class="kick">Фигура</span><h3>${SH.n}</h3><p style="margin:4px 0 0">${SH.d}</p></div>
@@ -684,9 +860,9 @@ function rRes(){if(!R||!R.id){go('intro');return}const S=SEASONS[R.season],SH=SH
   <div class="card"><span class="kick">Все звёзды</span><p style="margin:4px 0 8px;color:var(--mute);font-size:13px">Можно взять стиль любой.</p><div class="chips">${CELEBS.map((c,i)=>c.sx===R.sex?`<span class="chip" style="cursor:pointer" onclick="CEL=${i};go('cel')">${c.n}</span>`:'').join('')}</div></div>`;
  if(TAB==='wr'){const cel=R.cel!=null?CELEBS[R.cel]:null;const its=WMODE==='cel'&&cel?celItems(cel,true):R.caps;
   b=`${cel?`<div class="seg"><button class="${WMODE==='caps'?'on':''}" onclick="WMODE='caps';rRes()">Моя капсула</button><button class="${WMODE==='cel'?'on':''}" onclick="WMODE='cel';rRes()">Стиль: ${cel.n.split(' ')[0]}</button></div>`:''}
-  <div class="card"><span class="kick">${WMODE==='cel'&&cel?'В стиле '+cel.n+' · в ваших цветах':'Капсула · '+{office:'офис',smart:'smart casual',casual:'на каждый день',creative:'творческая'}[R.life]}</span><h3>${its.length} вещей</h3><p style="margin:4px 0 0;color:var(--mute);font-size:13px">Цвета — из вашей палитры${WMODE==='caps'?', крой — под фигуру':''}. Ссылки открывают поиск в магазине.</p>${its.map(itemRow).join('')}</div>`}
+  ${budgetSeg('rRes()')}${(()=>{const U0=new Set();const w=its.map(x=>withProd(x,U0));const s=w.reduce((t,x)=>t+(x.p?x.p.price:0),0);return `<p class="alt" style="margin-top:10px">Бюджет капсулы: <b style="color:var(--ink)">≈ ${rub(s)}</b> · найдено моделей: ${w.filter(x=>x.p).length} из ${w.length}</p>`})()}<div class="card"><span class="kick">${WMODE==='cel'&&cel?'В стиле '+cel.n+' · в ваших цветах':'Капсула · '+{office:'офис',smart:'smart casual',casual:'на каждый день',creative:'творческая'}[R.life]}</span><h3>${its.length} вещей</h3><p style="margin:4px 0 0;color:var(--mute);font-size:13px">Реальные модели под ваш бюджет; цвет — из вашей палитры${WMODE==='caps'?', крой — под фигуру':''}. «Источник» — где найдена цена.</p>${(()=>{const U=new Set();return its.map(x=>itemRow(x,U)).join('')})()}</div>`}
  if(TAB==='lk'){const cel=R.cel!=null?CELEBS[R.cel]:null;const L=WMODE==='cel'&&cel?makeLooks(celItems(cel,true),['В стиле '+cel.n.split(' ')[0],'Повседневный','Вечер','Выходные'],4):R.looks;
-  b=`${cel?`<div class="seg"><button class="${WMODE==='caps'?'on':''}" onclick="WMODE='caps';rRes()">Мои образы</button><button class="${WMODE==='cel'?'on':''}" onclick="WMODE='cel';rRes()">Стиль: ${cel.n.split(' ')[0]}</button></div>`:''}${L.map(lookCard).join('')}`}
+  b=`${cel?`<div class="seg"><button class="${WMODE==='caps'?'on':''}" onclick="WMODE='caps';rRes()">Мои образы</button><button class="${WMODE==='cel'?'on':''}" onclick="WMODE='cel';rRes()">Стиль: ${cel.n.split(' ')[0]}</button></div>`:''}${budgetSeg('rRes()')}${L.map(lookCard).join('')}`}
  if(TAB==='hair')b=`<div class="card"><span class="kick">Форма лица</span><h3>${F.n}</h3><p style="margin:4px 0 0">${R.sex==='f'?F.hf:F.hm}</p><div class="kv"><b>Очки</b><span>${F.gl}</span></div></div>
   <div class="card"><span class="kick">Под типаж · ${ID.n}</span><p style="margin:4px 0 0">${R.sex==='f'?T.hairF:T.hairM}</p></div>
   <div class="card"><span class="kick">Если окрашивать</span><p style="margin:4px 0 0">${({Весна:'тёплые светлые оттенки: золотистый, медовый, карамельный',Лето:'холодные мягкие: пепельный, жемчужный, холодный русый',Осень:'тёплые глубокие: каштановый, медный, шоколадный',Зима:'холодные чёткие: тёмный шоколад, чёрный, холодный тёмный'})[S.g]}. Не уходите далеко от натурального цвета.</p></div>`;
@@ -695,9 +871,9 @@ function rRes(){if(!R||!R.id){go('intro');return}const S=SEASONS[R.season],SH=SH
   <div class="card"><span class="kick">Цвет</span><h3>12 сезонов</h3><p style="margin:6px 0 0">Система 12 сезонов (Sci\\ART, Кэтрин Калиш) описывает окраску тремя осями по Манселлу: тон (тёплый–холодный), светлота (светлый–тёмный), насыщенность (яркий–мягкий). Ведущая ось определяет сезон: например, «светлое лето» — светлота ведущая, тон холодный.</p>
   <p style="margin:8px 0 0">Как считаем: ответы анкеты, замер цвета по фото (кожа, волосы, радужка с поправкой баланса белого по белку глаза) и выбор в тесте с рамками сводятся в три числа, затем находим ближайший из 12 эталонов.</p></div>
   <div class="card"><span class="kick">Ограничения</span><p style="margin:6px 0 0">Это ориентир, а не диагноз. Профессиональный анализ цвета делают при нейтральном свете с тканевыми драпировками; фото зависит от камеры и освещения. Типажи знаменитостей — по книге Кибби и распространённым разборам, цветотипы звёзд — примерные.</p>
-  <ul class="src"><li>D. Kibbe, «Metamorphosis: Discover Your Image Identity», 1987</li><li>K. Kalisz, Sci\\ART 12-season system, ~2000</li><li>A. Munsell, Munsell Color System (тон, светлота, насыщенность)</li></ul></div>`;
- app.innerHTML=`<div class="${TAB==='sum'?'fade':''}"><div class="top"><span class="logo">ТИПАЖ</span><button class="lnk" onclick="STEP=0;rStep()">Пройти заново</button></div>
- <div class="res-top"><span class="kick">Ваш типаж</span><h1>${ID.n}</h1><span style="color:var(--mute)">${S.n} · ${SH.n}</span></div>
+  <p style="margin:10px 0 0">Каталог: около 100 реальных моделей российских брендов с ценами из открытых источников (Яндекс Карты, Яндекс Маркет, Т—Ж, РБК Стиль, Собака.ru) на ноябрь 2026. Цены и наличие меняются — у каждой вещи есть ссылка на источник.</p><ul class="src"><li>D. Kibbe, «Metamorphosis: Discover Your Image Identity», 1987</li><li>K. Kalisz, Sci\\ART 12-season system, ~2000</li><li>A. Munsell, Munsell Color System (тон, светлота, насыщенность)</li></ul></div>`;
+ app.innerHTML=`<div class="${TAB==='sum'?'fade':''}"><div class="top"><span class="logo">ТИПАЖ</span><button class="lnk" onclick="STEP=0;rStep()">Заново</button></div>
+ <div class="res-top"><span class="kick">Профиль · ${ID.en}</span><h1>${ID.n}</h1><span class="sub">${S.n} · ${SH.n}</span><div class="strip">${S.col.slice(0,8).map(x=>`<i style="background:${x[0]}"></i>`).join('')}</div></div>
  <div class="tabs">${tabs.map(([k,n])=>`<button class="${TAB===k?'on':''}" onclick="TAB='${k}';rRes()">${n}</button>`).join('')}</div>${b}
  <p class="note">Подбор по анкете, фото и цветовому тесту — ориентир, а не диагноз. Финально цвет проверяйте у лица при дневном свете.</p></div>`;const ot=app.querySelector('.tabs .on');if(ot)ot.scrollIntoView({inline:'center',block:'nearest'})}
 function rCel(){const c=CELEBS[CEL];const its=celItems(c,CMODE==='mine');const L=makeLooks(its,['Повседневный','Вечер','Выходные','Деловой'],4);const m=(R.celebs||[]).find(x=>x.i===CEL);
@@ -705,7 +881,7 @@ function rCel(){const c=CELEBS[CEL];const its=celItems(c,CMODE==='mine');const L
  <div style="display:flex;gap:16px;align-items:center;margin-top:8px">${mono(c)}<div><h2 style="font-size:32px;margin:0;line-height:1.05">${c.n}</h2><span class="alt">${IDS[c.id].n} · ${SEASONS[c.s].n}${m?` · ${m.p}% совпадения`:''}</span></div></div>
  <p style="margin:12px 0 0">${c.d}</p>
  <div class="seg"><button class="${CMODE==='mine'?'on':''}" onclick="CMODE='mine';rCel()">В моих цветах</button><button class="${CMODE==='orig'?'on':''}" onclick="CMODE='orig';rCel()">Как у звезды</button></div>
- <div class="card"><span class="kick">Фирменный гардероб</span>${its.map(itemRow).join('')}</div>
+ ${budgetSeg('rCel()')}<div class="card"><span class="kick">Фирменный гардероб</span>${(()=>{const U=new Set();return its.map(x=>itemRow(x,U)).join('')})()}</div>
  ${L.map(lookCard).join('')}
  <button class="btn" onclick="R.cel=${CEL};WMODE='cel';store.set('tp_r2',R);TAB='wr';go('res')">${R.cel===CEL?'✓ Выбрано — открыть гардероб':'Сделать моим гардеробом'}</button>
  <p class="note">«В моих цветах» — каждая вещь перекрашена в ближайший цвет вашей палитры. Типаж и цветотип звезды — примерные.</p></div>`}
@@ -714,6 +890,8 @@ R=store.get('tp_r2',null);go(R&&R.id?'res':'intro');
 /* ===== PWA ===== */
 if('serviceWorker' in navigator&&/^https?:/.test(location.protocol)){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{})})}
 (function(){try{const ios=/iphone|ipad|ipod/i.test(navigator.userAgent);const sa=window.navigator.standalone||window.matchMedia('(display-mode: standalone)').matches;if(ios&&!sa&&!localStorage.getItem('tp_ihint')){const d=document.createElement('div');d.className='ihint';d.innerHTML='<b>Установите как приложение:</b> «Поделиться» внизу Safari → «На экран „Домой“».<button aria-label="Закрыть">×</button>';d.querySelector('button').onclick=()=>{d.remove();try{localStorage.setItem('tp_ihint','1')}catch(e){}};document.body.appendChild(d)}}catch(e){}})();
+
+
 
 
 </script>
